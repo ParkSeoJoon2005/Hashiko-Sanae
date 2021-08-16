@@ -109,9 +109,9 @@ HELP_STRINGS = """
 `ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`
 Powered by :- [Akatsuki](t.me/project_tsukinomi)"""
 
-layla_IMG = "https://telegra.ph/file/923ca8d23025ee79ec78a.jpg"
+Mizuhara_IMG = "https://telegra.ph/file/923ca8d23025ee79ec78a.jpg"
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
+DONATE_STRING = """Heya, Arigato ! thanks for donating glad to know you want to donate!
  You can support the project [TSUKIYOMI](t.me/Project_tsukinomi) \
  Supporting isnt always financial! [Akatsuki](t.me/project_tsukiyomi_started) \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
@@ -377,7 +377,7 @@ def layla_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="GO BACK", callback_data="Mizuhara_back")
+                    InlineKeyboardButton(text="『Go Back』", callback_data="Mizuhara_back")
                  ]
                 ]
             ),
