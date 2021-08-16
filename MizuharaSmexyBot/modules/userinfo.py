@@ -3,7 +3,7 @@ import os
 import re
 
 import requests
-from LaylaRobot import (
+from MizuharaSmexyBot import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
