@@ -10,8 +10,8 @@ from LaylaRobot import (
     WOLVES,
     dispatcher,
 )
-from LaylaRobot.modules.disable import DisableAbleCommandHandler
-from LaylaRobot.modules.helper_funcs.chat_status import (
+from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
+from MizuharaSmexyBot.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     connection_status,
@@ -22,9 +22,9 @@ from LaylaRobot.modules.helper_funcs.chat_status import (
     user_can_ban,
     can_delete,
 )
-from LaylaRobot.modules.helper_funcs.extraction import extract_user_and_text
-from LaylaRobot.modules.helper_funcs.string_handling import extract_time
-from LaylaRobot.modules.log_channel import gloggable, loggable
+from MizuharaSmexyBot.modules.helper_funcs.extraction import extract_user_and_text
+from MizuharaSmexyBot.modules.helper_funcs.string_handling import extract_time
+from MizuharaSmexyBot.modules.log_channel import gloggable, loggable
 from telegram import ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
