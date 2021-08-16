@@ -1,4 +1,4 @@
-from MizuharaSmexybot import telethn
+from MizuharaSmexyBot import telethn
 from telethon import events
 
 
