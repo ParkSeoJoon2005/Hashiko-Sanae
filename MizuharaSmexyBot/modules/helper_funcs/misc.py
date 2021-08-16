@@ -56,7 +56,7 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
 
     round_num = len(modules) / 4
     calc = len(modules) - round(round_num)
-    if calc in [1, 2]
+    if calc ==1:
         pairs.append((modules[-1], ))
     elif calc == 2:
         pairs.append((modules[-1], ))
