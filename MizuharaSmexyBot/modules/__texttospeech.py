@@ -1,6 +1,6 @@
-from LaylaRobot import *
-from LaylaRobot import telethn as tbot
-from LaylaRobot.events import register
+from MizuharaSmexyBot import *
+from MizuharaSmexyBot import telethn as tbot
+from MizuharaSmexyBot.events import register
 from gtts import gTTS
 from gtts import gTTSError
 from telethon.tl import functions
