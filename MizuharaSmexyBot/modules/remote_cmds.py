@@ -1,5 +1,5 @@
-from LaylaRobot import dispatcher
-from LaylaRobot.modules.helper_funcs.chat_status import (
+from MizuharaSmexyBot import dispatcher
+from MizuharaSmexyBot.modules.helper_funcs.chat_status import (
     bot_admin,
     is_bot_admin,
     is_user_ban_protected,
