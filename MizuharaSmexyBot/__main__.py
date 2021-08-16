@@ -73,9 +73,11 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 https://telegra.ph/file/923ca8d23025ee79ec78a.jpg
-Hello, I'M MIZUHARA
-`ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ! ʜɪᴛ` /help
-Maintained by @PAIN_TO_this_woorld 🖤
+Hello There, Myslef MIZUHARA The best rental girlfriend of all time
+I'm here to manage your group in a very cool way✨ My VC Music Player service isn't free 
+You've to rent me for that join support group for any details and help😌
+`Hit /help to take a look of what am I capable of doing`
+Maintained by @Project_tsukiyomi_started 🖤
 """
 
 buttons = [
@@ -90,9 +92,9 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="ʟᴏɢꜱ", url=f"https://t.me/project_tsukiyomi_started"),
+        InlineKeyboardButton(text="My Owner", url=f"https://t.me/mizuharaSmexyDevs"),
         InlineKeyboardButton(
-            text="ꜰᴇᴅᴇʀᴀᴛɪᴏɴ", url=f"https://t.me/https://t.me/project_tsukiyomi_started/410"
+            text="UPDATES", url=f"https://t.me/https://t.me/project_tsukiyomi_started/"),
         ),
     ],
     [
@@ -110,8 +112,8 @@ Powered by :- [Akatsuki](t.me/project_tsukinomi)"""
 layla_IMG = "https://telegra.ph/file/923ca8d23025ee79ec78a.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project [Pain](t.me/Pain_to_this_world) \
- Supporting isnt always financial! [Akatsuki](t.me/project_tsukinomi) \
+ You can support the project [TSUKIYOMI](t.me/Project_tsukinomi) \
+ Supporting isnt always financial! [Akatsuki](t.me/project_tsukiyomi_started) \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
 IMPORTED = {}
@@ -197,7 +199,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="👈️ BACK", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="☜ BACK", callback_data="help_back")]]
                     ),
                 )
 
@@ -357,7 +359,7 @@ def layla_about_callback(update, context):
     query = update.callback_query
     if query.data == "Mizuhara_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *Mizuhara*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *Mizuhara*, a powerful Anime based group management bot which helps you to manage your groups in a very coool  way.
                  \n❍ I can restrict users.
                  \n❍ I can greet users with customizable welcome messages and even set a group's rules.
                  \n❍ I have an advanced anti-flood system.
@@ -367,8 +369,8 @@ def layla_about_callback(update, context):
                  \n\n_Mizuhara's licensed under the GNU General Public License v3.0_
                  \n❍ Awesome Bots @project_tsukiyomi_started
                  \n❍ Support Group @project_tsukinomi
-                 \n❍ Assistant @Miku_plays.
-                 \n❍ Im Private group Manager bot for the groups of @pain_to_this_world so don't add me withouts his permission
+                 \n❍ My Owner is @Mizuhara_smexy_devs
+                 \n❍ My VC music player isn't free you've to pay 1$ per month to use it
                  \n\nIf you have any question about Mizuhara, let us know at @project_tsukinomi .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -395,14 +397,14 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Mizuhara*
-                 \nHere is the [Source Code](https://github.com/AnuragSharma080/MizuharaSmexyBot) .""",
+            text="""Moshi Moshi 😌 I'm *Mizuhara*
+                 \nHere is the [Repository](https://youtu.be/dQw4w9WgXcQ) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="source_back")
+                    InlineKeyboardButton(text="『Go Back』", callback_data="source_back")
                  ]
                 ]
             ),
@@ -468,10 +470,9 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="『Go Back』", callback_data="help_back")]]
             ),
-        )
-
+        q
     else:
         send_help(chat.id, HELP_STRINGS)
 
