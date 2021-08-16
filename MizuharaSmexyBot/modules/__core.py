@@ -4,7 +4,7 @@ from MizuharaSmexyBot import OWNER_ID, DEV_USERS
 from MizuharaSmexyBot import telethn as tbot
 from MizuharaSmexyBot.events import register
 
-water = './MizuharaSmexyBot/resources/yone.jpg'
+water = './MizuharaSmexyBot/resources/20210816_185444.jpg'
 client = tbot
 
 @register(pattern=r"^/send ?(.*)")
