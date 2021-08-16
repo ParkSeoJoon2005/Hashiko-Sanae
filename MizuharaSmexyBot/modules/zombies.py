@@ -112,7 +112,7 @@ async def zombies(event):
     
     
 from telethon.tl.types import UserStatusLastMonth, ChatBannedRights
-from LaylaRobot.events import register
+from MizuharaSmexyBot.events import register
 from telethon.tl.functions.channels import (EditBannedRequest)
                                             
 
