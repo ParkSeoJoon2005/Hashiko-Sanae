@@ -39,7 +39,7 @@ async def song(client, message):
 # Credits for @TheHamkerCat
 
 from pyrogram import filters
-from LaylaRobot import pbot as Layla
+from MizuharaSmexyBot import pbot as Layla
 
 ARQ = "https://thearq.tech/"
 
