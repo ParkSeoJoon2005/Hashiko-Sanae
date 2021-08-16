@@ -5,9 +5,9 @@ import time
 from contextlib import suppress
 from functools import partial
 
-import LaylaRobot
-import LaylaRobot.modules.sql.welcome_sql as sql
-from LaylaRobot import (
+import MizuharaSmexyBot
+import MizuharaSmexyBot.modules.sql.welcome_sql as sql
+from MizuharaSmexyBot import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -19,18 +19,18 @@ from LaylaRobot import (
     dispatcher,
     JOIN_LOGGER
 )
-from LaylaRobot.modules.helper_funcs.chat_status import (
+from MizuharaSmexyBot.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from LaylaRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from LaylaRobot.modules.helper_funcs.msg_types import get_welcome_type
-from LaylaRobot.modules.helper_funcs.string_handling import (
+from MizuharaSmexyBot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from MizuharaSmexyBot.modules.helper_funcs.msg_types import get_welcome_type
+from MizuharaSmexyBot.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from LaylaRobot.modules.log_channel import loggable
-from LaylaRobot.modules.sql.global_bans_sql import is_user_gbanned
+from MizuharaSmexyBot.modules.log_channel import loggable
+from MizuharaSmexyBot.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,
