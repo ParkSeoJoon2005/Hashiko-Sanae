@@ -6,8 +6,8 @@ import time
 import uuid
 from io import BytesIO
 
-import LaylaRobot.modules.sql.feds_sql as sql
-from LaylaRobot import (
+import Mizuhara.modules.sql.feds_sql as sql
+from MizuharaSmexyBot import (
     EVENT_LOGS,
     LOGGER,
     SUPPORT_CHAT,
