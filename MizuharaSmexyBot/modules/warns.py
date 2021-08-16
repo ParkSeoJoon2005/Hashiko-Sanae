@@ -3,7 +3,7 @@ import re
 from typing import Optional
 
 import telegram
-from LaylaRobot.modules.helper_funcs.extraction import (
+from MizuharaSmexyBot.modules.helper_funcs.extraction import (
     extract_text,
     extract_user,
     extract_user_and_text,
