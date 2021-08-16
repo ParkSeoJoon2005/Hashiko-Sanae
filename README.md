@@ -218,4 +218,4 @@ For starters click on this button
 #### • Anurag Sharma (AKA-Pain)    »»  <a href="https://github.com/AnuragSharma080" alt="AnuragSharma080"> <img src="https://img.shields.io/badge/AnuragSharma-90302f?logo=github" /></a> (OWNER)
 
 #### • Safone »»  <a href="https://github.com/AsmSafone" alt="Safone"> <img src="https://img.shields.io/badge/Safone-30302f?logo=github" /></a> (Dev)
-
+#### • Akeno »»  <a href="https://github.com/Stella-80" alt="Akeno"> <img src="https://img.shields.io/badge/Akeno-95B9C7?logo=github" /></a> (Dev)
