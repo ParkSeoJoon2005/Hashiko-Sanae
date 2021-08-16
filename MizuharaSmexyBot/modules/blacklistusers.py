@@ -1,7 +1,7 @@
 # Module to blacklist users and prevent them from using commands by @TheRealPhoenix
 import html
 
-import MizuharaSemxyBot.modules.sql.blacklistusers_sql as sql
+import MizuharaSmexyBot.modules.sql.blacklistusers_sql as sql
 from telegram import ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, run_async
