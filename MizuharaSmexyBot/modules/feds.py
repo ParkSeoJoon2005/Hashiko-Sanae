@@ -6,7 +6,7 @@ import time
 import uuid
 from io import BytesIO
 
-import Mizuhara.modules.sql.feds_sql as sql
+import MizuharaSmexyBot.modules.sql.feds_sql as sql
 from MizuharaSmexyBot import (
     EVENT_LOGS,
     LOGGER,
