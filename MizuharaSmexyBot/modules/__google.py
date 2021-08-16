@@ -7,8 +7,8 @@ from urllib.parse import urlencode
 
 import bs4
 import requests
-from LaylaRobot import *
-from LaylaRobot.events import register
+from MizuharaSmexyBot import *
+from MizuharaSmexyBot.events import register
 from PIL import Image
 from bing_image_downloader import downloader
 from bs4 import BeautifulSoup
