@@ -105,13 +105,13 @@ buttons = [
 
 HELP_STRINGS = """
 ``https://telegra.ph/file/923ca8d23025ee79ec78a.jpg`
-`Hi.. I'M` Mizuhara
+`Hi.. I'M` Mizuhara 
 `ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`
 Powered by :- [Akatsuki](t.me/project_tsukinomi)"""
 
 Mizuhara_IMG = "https://telegra.ph/file/923ca8d23025ee79ec78a.jpg"
 
-DONATE_STRING = """Heya, Arigato ! thanks for donating glad to know you want to donate!
+DONATE_STRING = """Heya, Arigato!for donating glad to know you want to donate!
  You can support the project [TSUKIYOMI](t.me/Project_tsukinomi) \
  Supporting isnt always financial! [Akatsuki](t.me/project_tsukiyomi_started) \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
@@ -709,7 +709,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(layla_about_callback, pattern=r"layla_")
+    about_callback_handler = CallbackQueryHandler(layla_about_callback, pattern=r"mizuhara_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
