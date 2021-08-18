@@ -20,7 +20,7 @@ import better_profanity
 import emoji
 import nude
 import requests
-from LaylaRobot import telethn as tbot
+from MizuharaSmexyBot import telethn as tbot
 from better_profanity import profanity
 from google_trans_new import google_translator
 from pymongo import MongoClient
@@ -46,7 +46,7 @@ MONGO_DB_URI = get_str_key("MONGO_DB_URI")
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
-db = client["LaylaRobot"]
+db = client["MizuharaSmexyBot"]
 
 async def is_nsfw(event):
     lmao = event
