@@ -428,7 +428,7 @@ async def del_profanity(event):
 
 __help__ = """
 <b> Group Guardian: </b>
-✪ Mizuhara can protect your group from NSFW senders, Slag word users and also can force members to use English
+✪ Mizuhara can protect your group from NSFW senders, Slang word users and also can force members to use English
 
 <b>Commmands</b>
  - /gshield <i>on/off</i> - Enable|Disable Porn cleaning
