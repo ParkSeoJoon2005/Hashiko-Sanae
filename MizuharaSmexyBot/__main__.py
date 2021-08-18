@@ -94,7 +94,7 @@ buttons = [
     [
         InlineKeyboardButton(text="M Owner", url=f"https://t.me/mizuhara_smexy_devs"),
         InlineKeyboardButton(
-            text="UPDATES", url=f"https://t.me/https://t.me/project_tsukiyomi_started/410"
+            text="UPDATES", url=f"https://t.me/project_tsukiyomi_started/410"
         ),
     ],
     [
