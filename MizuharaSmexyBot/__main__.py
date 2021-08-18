@@ -83,7 +83,7 @@ Maintained by @Project_tsukiyomi_started 🖤
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/MizuharaSmexyBot?startgroup=true"),
+            text="➕️ ᴀᴅᴅ 𝙼𝚒𝚣𝚞𝚑𝚊𝚛𝚊 ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/MizuharaSmexyBot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="Mizuhara_"),
@@ -92,9 +92,9 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="M Owner", url=f"https://t.me/mizuhara_smexy_devs"),
+        InlineKeyboardButton(text="ᴛʜᴀɴᴋꜱ ᴛᴏ", url=f"https://t.me/mizuhara_smexy_devs"),
         InlineKeyboardButton(
-            text="UPDATES", url=f"https://t.me/project_tsukiyomi_started/410"
+            text="ᴜᴘᴅᴀᴛᴇꜱ", url=f"https://t.me/project_tsukiyomi_started/410"
         ),
     ],
     [
