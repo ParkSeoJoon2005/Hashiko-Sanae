@@ -324,7 +324,7 @@ def export_data(update, context):
         },
     }
     baccinfo = json.dumps(backup, indent=4)
-    with open("LaylaRobot{}.backup".format(chat_id), "w") as f:
+    with open("MizuharaSmexyBot{}.backup".format(chat_id), "w") as f:
         f.write(str(baccinfo))
     context.bot.sendChatAction(current_chat_id, "upload_document")
     tgl = time.strftime("%H:%M:%S - %d/%m/%Y", time.localtime(time.time()))
@@ -340,8 +340,8 @@ def export_data(update, context):
         pass
     context.bot.sendDocument(
         current_chat_id,
-        document=open("LaylaRobot{}.backup".format(chat_id), "rb"),
-        caption="💾*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `LaylaRobot-Backup` was specially made for notes 📚.".format(
+        document=open("MizuharaSmexyBot{}.backup".format(chat_id), "rb"),
+        caption="💾*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `MizuharaSmexyBot-Backup` was specially made for notes 📚.".format(
             chat.title, chat_id, tgl
         ),
         timeout=360,
@@ -366,16 +366,18 @@ def get_chat(chat_id, chat_data):
         return {"status": False, "value": False}
 
 
-__mod_name__ = "Backup"
+__mod_name__ = "Backups"
 
 __help__ = """
 *Only for group owner:*
-
- ❍ /import: Reply to the backup file for the butler / emilia group to import as much as possible, making transfers very easy! \
+ Sometimes you want to see all of your data in your chats or you want to copy your data to another chats or you even want to swift bots, in all these cases imports/exports for you!
+ 
+ ➥ /import: Reply to the backup file for the butler / emilia group to import as much as possible, making transfers very easy! \
  Note that files / photos cannot be imported due to telegram restrictions.
 
- ❍ /export: Export group data, which will be exported are: rules, notes (documents, images, music, video, audio, voice, text, text buttons) \
+ ➥ /export: Export group data, which will be exported are: rules, notes (documents, images, music, video, audio, voice, text, text buttons) \
 
+Notes: Exporting / importing avaible every 2 hours to prevent flooding.
 """
 
 IMPORT_HANDLER = CommandHandler("import", import_data)
