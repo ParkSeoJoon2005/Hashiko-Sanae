@@ -96,11 +96,11 @@ async def lego(event):
     draw.text((x, y), text, font=font, fill="black", stroke_width=25, stroke_fill="yellow")
     fname2 = "LogoByMizuhara.png"
     img.save(fname2, "png")
-    await tbot.send_file(event.chat_id, fname2, caption="Made By @Project_Tsukiyomi_Started Support @Project_Tsukinomi")
+    await tbot.send_file(event.chat_id, fname2, caption="Made By @the_mizuhara Support @smexy_Mizuhara")
     if os.path.exists(fname2):
             os.remove(fname2)
  except Exception as e:
-   await event.reply(f'Error Report @Project_Tsukinomi, {e}')
+   await event.reply(f'Error Report @smexy_mizuhara, {e}')
 
 
 
@@ -140,7 +140,7 @@ async def lego(event):
     if os.path.exists(fname2):
             os.remove(fname2)
  except Exception as e:
-   await event.reply(f'Error Report @Project_tsukinomi, {e}')
+   await event.reply(f'Error Report @Smexy_Mizuhara, {e}')
 
 file_help = os.path.basename(__file__)
 file_help = file_help.replace(".py", "")
@@ -148,8 +148,8 @@ file_helpo = file_help.replace("_", " ")
 
 
 __help__ = """
- ❍ /logo text :  Create your logo with your name
- ❍ /wlogo text :  Create your logo with your name
+ ➥ /logo text :  Create your logo with your name
+ ➥ /wlogo text :  Create your logo with your name
 
  """
 __mod_name__ = "Logo"
