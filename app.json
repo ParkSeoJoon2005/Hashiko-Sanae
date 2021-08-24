@@ -1,7 +1,7 @@
 {
       "name": "MizuharaSmexyBot",
       "description": "Telegram group management bot.",
-      "logo": "https://telegra.ph/file/30d8c4fd7e3fce59c1538.jpg",
+      "logo": "https://telegra.ph/file/5200fe964566cb7b61502.jpg",
       "keywords": [
          "telegram",
          "anime",
@@ -28,7 +28,7 @@
   ],  
    "env": {
       "TOKEN": {
-         "description": "Your bot token. Get one from @BotFather Bro",
+         "description": "Your bot token. Get one from @BotFather Bruh",
          "required": true,
          "value": ""
       },
@@ -70,9 +70,14 @@
          "value": "Pain_to_this_world"
       },
       "SUPPORT_CHAT": {
-         "description": "Your Telegram support group Username without @",
-         "required": true,
-         "value": "Project_tsukinomi"
+         "description": "Your Telegram support group Username without @ (Leave it if you don't have one)",
+         "required": false,
+         "value": "Smexy_Mizuhara"
+      },
+       "UPDATES_CHANNEL": {
+         "description": "Your Telegram Updates channel For Your Bot Username without @ (Leave it if you don't have one)",
+         "required": false,
+         "value": "the_Mizuhara"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
@@ -114,12 +119,12 @@
       },
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
-         "required": false,
+         "required": true,
          "value": "1332331113"
       },
       "sw_api": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
-         "required": false,
+         "required": true,
          "value": ""
       }, 
       "STRICT_GBAN": {
@@ -162,7 +167,7 @@
       },
       "URL": {
          "description": "The Heroku App URL :-  https://<appname>.herokuapp.com/",
-         "required": false,
+         "required": true,
          "value": ""
       },
       "No_LOAD": {
