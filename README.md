@@ -219,3 +219,4 @@ For starters click on this button
 
 #### • Safone »»  <a href="https://github.com/AsmSafone" alt="Safone"> <img src="https://img.shields.io/badge/Safone-30302f?logo=github" /></a> (Dev)
 #### • Akeno »»  <a href="https://github.com/Stella-80" alt="Akeno"> <img src="https://img.shields.io/badge/Akeno-95B9C7?logo=github" /></a> (Dev)
+#### • Aashish »»  <a href="https://github.com/aksr-aashish" alt="Aashish "> <img src="https://img.shields.io/badge/Aashish-95B9C7?logo=github" /></a>
