@@ -7,7 +7,7 @@
 </p>
 
 
-### Click Below Image To Deploy 
+### Click Below Image To Deploy On
 ### 💙Heroku💙
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/AnuragSharma080/MizuharaSmexyBot.git"><img src="https://telegra.ph/file/923ca8d23025ee79ec78a.jpg" width="400"></a></p>
 <p align="center">
