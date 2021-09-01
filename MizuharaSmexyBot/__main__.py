@@ -74,10 +74,10 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 https://telegra.ph/file/923ca8d23025ee79ec78a.jpg
 Hello There, Myslef MIZUHARA The best rental girlfriend of all time
-I'm here to manage your group in a very cool way✨ My VC Music Player service isn't free 
-You've to rent me for that join support group for any details and help😌
-`Hit /help to take a look of what am I capable of doing`
-Maintained by @Project_tsukiyomi_started 🖤
+I'm here to manage your group in a very cool way✨  
+You've join support group for any help Regarding me 😌
+`Hit /help to take a look of what am I capable of`
+My Network @Project_tsukiyomi 🖤
 """
 
 buttons = [
@@ -94,7 +94,7 @@ buttons = [
     [
         InlineKeyboardButton(text="ᴛʜᴀɴᴋꜱ ᴛᴏ", url=f"https://t.me/mizuhara_smexy_devs"),
         InlineKeyboardButton(
-            text="ᴜᴘᴅᴀᴛᴇꜱ", url=f"https://t.me/project_tsukiyomi_started/410"
+            text="ᴜᴘᴅᴀᴛᴇꜱ", url=f"https://t.me/smexy_updates/410"
         ),
     ],
     [
@@ -107,13 +107,13 @@ HELP_STRINGS = """
 ``https://telegra.ph/file/923ca8d23025ee79ec78a.jpg`
 `Hi.. I'M` Mizuhara 
 `ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`
-Powered by :- [Akatsuki](t.me/project_tsukinomi)"""
+Powered by :- @Project_tsukiyomi"""
 
 Mizuhara_IMG = "https://telegra.ph/file/923ca8d23025ee79ec78a.jpg"
 
 DONATE_STRING = """Heya, Arigato!for donating glad to know you want to donate!
- You can support the project [TSUKIYOMI](t.me/Project_tsukinomi) \
- Supporting isnt always financial! [Akatsuki](t.me/project_tsukiyomi_started) \
+ You can support the project @Project_tsukiyomi \
+ Supporting isnt always financial! @tsukinomi_chat \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
 IMPORTED = {}
@@ -360,17 +360,17 @@ def layla_about_callback(update, context):
     if query.data == "Mizuhara_":
         query.message.edit_text(
             text=""" ℹ️ I'm *Mizuhara*, a powerful Anime based group management bot which helps you to manage your groups in a very coool  way.
-                 \n❍ I can restrict users.
-                 \n❍ I can greet users with customizable welcome messages and even set a group's rules.
-                 \n❍ I have an advanced anti-flood system.
-                 \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n❍ I check for admins' permissions before executing any command and more stuffs
-                 \n\n_Mizuhara's licensed under the GNU General Public License v3.0_
-                 \n❍ Awesome Bots @project_tsukiyomi_started
-                 \n❍ Support Group @project_tsukinomi
-                 \n❍ My Owner is @Mizuhara_smexy_devs
-                 \n❍ My VC music player isn't free you've to pay 1$ per month to use it
+                 \n➥ I can restrict users.
+                 \n➥ I can greet users with customizable welcome messages and even set a group's rules.
+                 \n➥ I have an advanced anti-flood system.
+                 \n➥ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
+                 \n➥ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
+                 \n➥ I check for admins' permissions before executing any command and more stuffs
+                 \n➥ Mizuhara's licensed under the GNU General Public License v3.0_
+                 \n➥ Our Network @project_tsukiyomi_started
+                 \n➥ Support Group @chizuru_support
+                 \n➥ My Owner is @Mizuhara_smexy_devs
+                 \n➥ Checkout @Project_tsukiyomi
                  \n\nIf you have any question about Mizuhara, let us know at @project_tsukinomi .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
