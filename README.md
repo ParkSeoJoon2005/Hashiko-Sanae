@@ -209,9 +209,9 @@ For starters click on this button
 
 ## Support💜
 
-<a href="https://t.me/project_tsukiyomi_started"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
+<a href="https://t.me/smexy_updates"><img src="https://img.shields.io/badge/Join-Updates%20Channel-violet.svg?logo=Telegram"></a>
 
-<a href="https://t.me/Project_Tsukinomi"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
+<a href="https://t.me/chizuru_support"><img src="https://img.shields.io/badge/Join-Support%20Group-purple.svg?logo=telegram"></a>
 
 ### ALL DEVS AND Contributors❤
 
