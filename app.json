@@ -72,7 +72,7 @@
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group Username without @ (Leave it if you don't have one)",
          "required": false,
-         "value": "Smexy_Mizuhara"
+         "value": "Chizuru_Support"
       },
        "UPDATES_CHANNEL": {
          "description": "Your Telegram Updates channel For Your Bot Username without @ (Leave it if you don't have one)",
@@ -187,7 +187,7 @@
       "DONATION_LINK": {
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
          "required": false,
-         "value": "https://t.me/project_tsukinomi"
+         "value": "https://t.me/tsukinomi_chat"
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
