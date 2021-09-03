@@ -21,7 +21,7 @@
 
 
 
-<h6 align="center"><b>⚡A modular Telegram Python bot running on python3 with a sqlalchemy database.⚡</b></h9>
+<h6 align="center"><b>⭐ If You like our repo and enjoyed the bot Plz Consider Giving Us A Star⭐ </b></h9>
 
 ## Available On Telegram As [@MizuharaSmexyBot](https://t.me/MizuharaSmexyBot) 💜
 
