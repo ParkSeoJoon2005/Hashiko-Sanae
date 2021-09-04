@@ -73,7 +73,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT= """ Hi I am [Mizuhara](https://telegra.ph/file/75c2e5861318509b9c1aa.jpg) by @Project_Tsukiyomi 💜 .
+PM_START_TEXT= """ Hi I am [Mizuhara](https://telegra.ph/file/75c2e5861318509b9c1aa.jpg) 💜 .
 """
 buttons = [
     [
