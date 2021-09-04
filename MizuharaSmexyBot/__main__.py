@@ -73,7 +73,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = """ "https://telegra.ph/file/75c2e5861318509b9c1aa.jpg" Hi Me Iz Mizuhara 💜.
+PM_START_TEXT = """https://telegra.ph/file/75c2e5861318509b9c1aa.jpg" Hi Me Iz Mizuhara 💜.
 """
 buttons = [
     [
