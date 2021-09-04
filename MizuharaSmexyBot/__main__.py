@@ -74,7 +74,6 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-https://telegra.ph/file/923ca8d23025ee79ec78a.jpg
 Hello There, Myslef MIZUHARA The best rental girlfriend of all time
 I'm here to manage your group in a very cool way✨  
 You've join support group for any help Regarding me 😌
