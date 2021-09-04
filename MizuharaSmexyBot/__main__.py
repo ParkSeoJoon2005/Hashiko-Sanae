@@ -370,12 +370,12 @@ def layla_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="Mizuhara_back")
+                    InlineKeyboardButton(text="Back", callback_data="mizuhara_back")
                  ]
                 ]
             ),
         )
-    elif query.data == "Mizuhara_back":
+    elif query.data == "mizuhara_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
