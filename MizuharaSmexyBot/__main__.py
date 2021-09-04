@@ -74,8 +74,8 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-[.](https://telegra.ph/file/75c2e5861318509b9c1aa.jpg)
-Ohayo, Me iz MIZUHARA 💜 by @Project_Tsukiyomi
+(https://telegra.ph/file/75c2e5861318509b9c1aa.jpg)
+Oʜᴀʏᴏ Mᴇ Iᴢ Mɪᴢᴜʜᴀʀᴀ 💜Bʏ @Project_Tsukiyomi
 """
 
 buttons = [
