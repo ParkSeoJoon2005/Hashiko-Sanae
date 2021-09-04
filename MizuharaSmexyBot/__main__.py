@@ -78,7 +78,7 @@ buttons = [
             text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/MizuharaSmexyBot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="mizuhara_"),
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="mizuharasmexybot_"),
         InlineKeyboardButton(
             text="Thanks To", url=f"https://t.me/TeamSmexy"
         ),
@@ -347,7 +347,7 @@ def help_button(update, context):
 @run_async
 def layla_about_callback(update, context):
     query = update.callback_query
-    if query.data == "mizuhara_":
+    if query.data == "mizuharasmexybot_":
         query.message.edit_text(
             text=""" Ohayo Me iz Mizuhara*, a powerful Anime Based  group management bot built to help you manage your group easily.
                  \n➥ I can restrict users.
