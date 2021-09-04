@@ -74,10 +74,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hello There, Myslef MIZUHARA The best rental girlfriend of all time
-I'm here to manage your group in a very cool way✨  
-You've join support group for any help Regarding me 😌
-`Hit /help to take a look of what am I capable of`
+Hello There, Myslef MIZUHARA 
 My Network @Project_tsukiyomi 🖤
 """
 
