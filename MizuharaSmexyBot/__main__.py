@@ -73,7 +73,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = """https://telegra.ph/file/75c2e5861318509b9c1aa.jpg" Hi Me Iz Mizuhara 💜.
+PM_START_TEXT= """ Hi I am [Mizuhara](https://telegra.ph/file/75c2e5861318509b9c1aa.jpg) 💜 An Powerful Anime Themed Telegram Group Management Bot hit /help to learn what I'm capable of By @Project_Tsukiyomi .
 """
 buttons = [
     [
