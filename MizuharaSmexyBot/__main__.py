@@ -74,9 +74,12 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hello, I'M Layla
-`ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ! ʜɪᴛ` /help
-Maintained by @HEROGAMERS1 ❤
+https://telegra.ph/file/923ca8d23025ee79ec78a.jpg
+Hello There, Myslef MIZUHARA The best rental girlfriend of all time
+I'm here to manage your group in a very cool way✨  
+You've join support group for any help Regarding me 😌
+`Hit /help to take a look of what am I capable of`
+My Network @Project_tsukiyomi 🖤
 """
 
 buttons = [
