@@ -74,8 +74,8 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-https://telegra.ph/file/75c2e5861318509b9c1aa.jpg
-Hello There, Myslef MIZUHARA 🖤
+[.](https://telegra.ph/file/75c2e5861318509b9c1aa.jpg)
+Ohayo, Me iz MIZUHARA 💜 I'm An Anime Based Telegram Group manager bot | Network @Project_Tsukiyomi
 """
 
 buttons = [
@@ -84,7 +84,7 @@ buttons = [
             text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/MizuharaSmexyBot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="layla_"),
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="mizuhara_"),
         InlineKeyboardButton(
             text="Thanks To", url=f"https://t.me/TeamSmexy"
         ),
@@ -353,7 +353,7 @@ def help_button(update, context):
 @run_async
 def layla_about_callback(update, context):
     query = update.callback_query
-    if query.data == "layla_":
+    if query.data == "mizuhara_":
         query.message.edit_text(
             text=""" Ohayo Me iz Mizuhara*, a powerful Anime Based  group management bot built to help you manage your group easily.
                  \n➥ I can restrict users.
