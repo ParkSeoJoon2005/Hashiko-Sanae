@@ -2,7 +2,7 @@
 import asyncio
 import os
 
-import shutil
+import MizuharaSmexyBot
 
 
 async def normalglitch_1(client, message):
