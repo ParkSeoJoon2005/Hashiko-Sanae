@@ -10,7 +10,7 @@ from pyrogram.types import (
 )
 
 # By @TroJanzHEX
-from SaitamaRobot.utlis.ImageEditor.edit_1 import (  # pylint:disable=import-error
+from MizuharaSmexyBot.utlis.ImageEditor.edit_1 import (  # pylint:disable=import-error
     black_white,
     box_blur,
     bright,
@@ -18,7 +18,7 @@ from SaitamaRobot.utlis.ImageEditor.edit_1 import (  # pylint:disable=import-err
     mix,
     normal_blur,
 )
-from SaitamaRobot.utlis.ImageEditor.edit_2 import (  # pylint:disable=import-error
+from MizuharaSmexyBot.utlis.ImageEditor.edit_2 import (  # pylint:disable=import-error
     cartoon,
     circle_with_bg,
     circle_without_bg,
@@ -28,13 +28,13 @@ from SaitamaRobot.utlis.ImageEditor.edit_2 import (  # pylint:disable=import-err
     sepia_mode,
     sticker,
 )
-from SaitamaRobot.utlis.ImageEditor.edit_3 import (  # pylint:disable=import-error
+from MizuharaSmexyBot.utlis.ImageEditor.edit_3 import (  # pylint:disable=import-error
     black_border,
     blue_border,
     green_border,
     red_border,
 )
-from SaitamaRobot.utlis.ImageEditor.edit_4 import (  # pylint:disable=import-error
+from MizuharaSmexyBot.utlis.ImageEditor.edit_4 import (  # pylint:disable=import-error
     inverted,
     removebg_plain,
     removebg_sticker,
@@ -44,7 +44,7 @@ from SaitamaRobot.utlis.ImageEditor.edit_4 import (  # pylint:disable=import-err
     rotate_270,
     round_sticker,
 )
-from SaitamaRobot.utlis.ImageEditor.edit_5 import (  # pylint:disable=import-error
+from MizuharaSmexyBot.utlis.ImageEditor.edit_5 import (  # pylint:disable=import-error
     normalglitch_1,
     normalglitch_2,
     normalglitch_3,
@@ -56,7 +56,7 @@ from SaitamaRobot.utlis.ImageEditor.edit_5 import (  # pylint:disable=import-err
     scanlineglitch_4,
     scanlineglitch_5,
 )
-from SaitamaRobot import pbot as Client
+from MizuharaSmexyBot import pbot as Client
 
 lel = 00000000
 # pylint:disable=import-error
