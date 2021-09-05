@@ -2,7 +2,7 @@
 import os
 import shutil
 
-import cv2
+import MizuharaSmexyBot
 from PIL import Image, ImageEnhance, ImageFilter
 
 
