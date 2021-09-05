@@ -10,7 +10,8 @@ from pyrogram.types import (
 )
 
 # By @TroJanzHEX
-from DaisyX.Addons.ImageEditor.edit_1 import (  # pylint:disable=import-error
+
+from MizuharaSmexyBot.utils.ImageEditor.edit_1 import (  # pylint:disable=import-error
     black_white,
     box_blur,
     bright,
@@ -18,7 +19,7 @@ from DaisyX.Addons.ImageEditor.edit_1 import (  # pylint:disable=import-error
     mix,
     normal_blur,
 )
-from DaisyX.Addons.ImageEditor.edit_2 import (  # pylint:disable=import-error
+from MizuharaSmexyBot.utils.ImageEditor.edit_2 import (  # pylint:disable=import-error
     cartoon,
     circle_with_bg,
     circle_without_bg,
@@ -28,13 +29,13 @@ from DaisyX.Addons.ImageEditor.edit_2 import (  # pylint:disable=import-error
     sepia_mode,
     sticker,
 )
-from DaisyX.Addons.ImageEditor.edit_3 import (  # pylint:disable=import-error
+from MizuharaSmexyBot.utils.ImageEditor.edit_3 import (  # pylint:disable=import-error
     black_border,
     blue_border,
     green_border,
     red_border,
 )
-from DaisyX.Addons.ImageEditor.edit_4 import (  # pylint:disable=import-error
+from MizuharaSmexyBot.utils.ImageEditor.edit_4 import (  # pylint:disable=import-error
     inverted,
     removebg_plain,
     removebg_sticker,
@@ -44,7 +45,7 @@ from DaisyX.Addons.ImageEditor.edit_4 import (  # pylint:disable=import-error
     rotate_270,
     round_sticker,
 )
-from DaisyX.Addons.ImageEditor.edit_5 import (  # pylint:disable=import-error
+from MizuharaSmexyBot.utils.ImageEditor.edit_5 import (  # pylint:disable=import-error
     normalglitch_1,
     normalglitch_2,
     normalglitch_3,
@@ -56,7 +57,7 @@ from DaisyX.Addons.ImageEditor.edit_5 import (  # pylint:disable=import-error
     scanlineglitch_4,
     scanlineglitch_5,
 )
-from DaisyX.services.pyrogram import pbot as Client
+from MizuharaSmexyBot.services.pyrogram import pbot as Client
 
 lel = 00000000
 # pylint:disable=import-error
