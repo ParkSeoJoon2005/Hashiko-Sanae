@@ -1,7 +1,7 @@
 # By @TroJanzHEX
 import os
 
-import shutil
+import Mizuharasmexybot
 
 from PIL import Image, ImageOps
 
