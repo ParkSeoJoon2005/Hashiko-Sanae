@@ -5,7 +5,7 @@ from faker import Faker
 from faker.providers import internet
 from telethon import events
 
-from MizuharaSmexyBot.function.telethonbasics import is_admin
+from MizuharaSmexyBot.pyrogramee.telethonbasics import is_admin
 from MizuharaSmexyBot.services.telethon import tbot
 
 
