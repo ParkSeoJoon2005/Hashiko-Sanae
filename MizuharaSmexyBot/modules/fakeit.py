@@ -6,7 +6,7 @@ from faker.providers import internet
 from telethon import events
 
 from MizuharaSmexyBot.pyrogramee.telethonbasics import is_admin
-from MizuharaSmexyBot.helper_funcs.telethn import tbot
+from MizuharaSmexyBot.telethn import tbot
 
 
 @tbot.on(events.NewMessage(pattern="/fakegen$"))
