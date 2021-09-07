@@ -6,7 +6,7 @@ import flag
 import html, os
 from countryinfo import CountryInfo
 from MizuharaSmexyBot.services.events import register
-from MizuharaSmexyBot.services.telethon import tbot as borg
+from MizuharaSmexyBot.services.telethn import tbot as borg
 
 
 @register(pattern="^/country (.*)")
