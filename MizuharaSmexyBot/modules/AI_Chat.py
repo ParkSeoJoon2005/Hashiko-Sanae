@@ -1,21 +1,4 @@
-# Copyright (C) 2021 Red-Aura & TeamDaisyX & HamkerCat
-
-# This file is part of Daisy (Telegram Bot)
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import re
-
 import emoji
 
 IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
@@ -27,11 +10,11 @@ import aiohttp
 from google_trans_new import google_translator
 from pyrogram import filters
 
-from DaisyX import BOT_ID
-from DaisyX.db.mongo_helpers.aichat import add_chat, get_session, remove_chat
-from DaisyX.function.inlinehelper import arq
-from DaisyX.function.pluginhelpers import admins_only, edit_or_reply
-from DaisyX.services.pyrogram import pbot as daisyx
+from MizuharaSmexyBot import BOT_ID
+from MizuharaSmexyBot.db.mongo_helpers.aichat import add_chat, get_session, remove_chat
+from MizuharaSmexyBot.function.inlinehelper import arq
+from MizuharaSmexyBot.function.pluginhelpers import admins_only, edit_or_reply
+from MizuharaSmexyBot.services.pyrogram import pbot as daisyx
 
 translator = google_translator()
 
@@ -64,7 +47,7 @@ daisy_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 """
-@daisyx.on_message(
+@MizuharaSmexyBot.on_message(
     filters.voice & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )
@@ -168,13 +151,13 @@ async def hmm(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("daisy", "Aco")
-        test = test.replace("Daisy", "Aco")
+        test = test.replace("mizuhara", "Aco")
+        test = test.replace("Mizuhara", "Aco")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "Daisy")
-        response = response.replace("aco", "Daisy")
+        response = response.replace("Aco", "mizuhara")
+        response = response.replace("aco", "Mizuhara")
 
         pro = response
         try:
@@ -225,12 +208,12 @@ async def hmm(client, message):
         # test = emoji.demojize(test.strip())
 
         test = test.replace("daisy", "Aco")
-        test = test.replace("Daisy", "Aco")
+        test = test.replace("Mizuhara", "Aco")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "Daisy")
-        response = response.replace("aco", "Daisy")
+        response = response.replace("Aco", "mizuhara")
+        response = response.replace("aco", "Mizuhara")
         pro = response
         if not "en" in lan and not lan == "":
             try:
@@ -293,12 +276,12 @@ async def inuka(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("daisy", "Aco")
-    test = test.replace("Daisy", "Aco")
+    test = test.replace("mizuhara", "Aco")
+    test = test.replace("Mizuhara", "Aco")
 
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Daisy")
-    response = response.replace("aco", "Daisy")
+    response = response.replace("Aco", "Mizuhara")
+    response = response.replace("aco", "mizuhara")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -311,7 +294,7 @@ async def inuka(client, message):
 
 
 @daisyx.on_message(
-    filters.regex("Daisy|daisy|DaisyX|daisyx|Daisyx")
+    filters.regex("Mizuhara|mizuhara|Mizuharasmexy|mizuharasmexy|MIZUHARA")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -364,11 +347,11 @@ async def inuka(client, message):
 
     # test = emoji.demojize(test.strip())
 
-    test = test.replace("daisy", "Aco")
-    test = test.replace("Daisy", "Aco")
+    test = test.replace("mizuhara", "Aco")
+    test = test.replace("Mizuhara", "Aco")
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Daisy")
-    response = response.replace("aco", "Daisy")
+    response = response.replace("Aco", "Mizuhara")
+    response = response.replace("aco", "Mizuhara")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -385,14 +368,14 @@ async def inuka(client, message):
 
 __help__ = """
 <b> Chatbot </b>
-DAISY AI 3.0 IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
+Mizuhara AI IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
 
  - /chatbot [ON/OFF]: Enables and disables AI Chat mode (EXCLUSIVE)
  - /chatbot EN : Enables English only chatbot
  
  
 <b> Assistant </b>
- - /ask [question]: Ask question from daisy
+ - /ask [question]: Ask question from Mizuhara
  - /ask [reply to voice note]: Get voice reply
  
 """
