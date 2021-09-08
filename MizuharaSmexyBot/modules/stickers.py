@@ -15,7 +15,7 @@ from telegram.utils.helpers import mention_html
 
 from MizuharaSmexyBot import dispatcher
 from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
-from MizuharaSnexyBot.events import register
+from MizuharaSmexyBot.events import register
 from MizuharaSmexyBot import LOGGER
 from MizuharaSmexyBot import TEMP_DOWNLOAD_DIRECTORY
 from MizuharaSmexyBot import telethn as bot
