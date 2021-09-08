@@ -13,12 +13,12 @@ from telegram import TelegramError, Update
 from telegram.ext import run_async, CallbackContext
 from telegram.utils.helpers import mention_html
 
-from SaitamaRobot import dispatcher
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot.events import register
-from SaitamaRobot import LOGGER
-from SaitamaRobot import TEMP_DOWNLOAD_DIRECTORY
-from SaitamaRobot import telethn as bot
+from MizuharaSmexyBot import dispatcher
+from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
+from MizuharaSnexyBot.events import register
+from MizuharaSmexyBot import LOGGER
+from MizuharaSmexyBot import TEMP_DOWNLOAD_DIRECTORY
+from MizuharaSmexyBot import telethn as bot
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
@@ -499,7 +499,7 @@ async def drawText(image_path, text):
     if os.name == "nt":
         fnt = "ariel.ttf"
     else:
-        fnt = "./SaitamaRobot/resources/EnclaveDemoRegular.ttf"
+        fnt = "./MizuharaSmexyBot/resources/EnclaveDemoRegular.ttf"
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
     if ";" in text:
         upper_text, lower_text = text.split(";")
