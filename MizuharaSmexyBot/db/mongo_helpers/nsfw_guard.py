@@ -1,4 +1,4 @@
-from DaisyX.services.mongo2 import db
+from MizuharaSmexyBot.services.mongo2 import db
 
 nsfwdb = db.nsfw
 
