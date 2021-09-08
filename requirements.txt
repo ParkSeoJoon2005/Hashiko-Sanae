@@ -69,3 +69,5 @@ better_profanity
 nudepy
 motor
 cloudscraper
+
+cv2
