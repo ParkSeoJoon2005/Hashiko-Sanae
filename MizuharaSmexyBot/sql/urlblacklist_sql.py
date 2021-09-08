@@ -1,24 +1,8 @@
-#    MissJuliaRobot (A Telegram Bot Project)
-#    Copyright (C) 2019-Present Anonymous (https://t.me/MissJulia_Robot)
-
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, in version 3 of the License.
-
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see < https://www.gnu.org/licenses/agpl-3.0.en.html >
-
-
 import threading
 
 from sqlalchemy import Column, String, UnicodeText
 
-from DaisyX.services.sql import BASE, SESSION
+from MizuharaSmexyBot.services.sql import BASE, SESSION
 
 
 class URLBlackListFilters(BASE):
