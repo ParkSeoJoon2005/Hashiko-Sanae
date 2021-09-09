@@ -70,8 +70,8 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-PM_START_TEXT= """ Hi I am [Mizuhara](https://telegra.ph/file/75c2e5861318509b9c1aa.jpg)
-`An Powerful Anime Themed Group Manager Bot hit /help TO see what I am capable of by`[@Project_Tsukiyomi](https://t.me/project_tsukiyomi).
+PM_START_TEXT= """ Hi I am [Mizuhara](https://telegra.ph/file/3c9d1bad59a0666786887.jpg)
+`An Powerful Anime Themed Group Manager Bot hit ✨Help and Commands✨ TO see what I am capable of by`[@Project_Tsukiyomi](https://t.me/project_tsukiyomi).
 """
 buttons = [
     [
@@ -99,7 +99,7 @@ buttons = [
 HELP_STRINGS = """
 `Ohayo.. I'M` Mizuhara
 `ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`
-Powered by :- [Project Tsukiyomi](t.me/Project_tsukiyomi)"""
+Powered by :- [Project Tsukiyomi](t.me/Project_tsukiyomi) [.](https://telegra.ph/file/1ea3d75011561072637b2.jpg)"""
 Mizuhara_IMG = "https://telegra.ph/file/75c2e5861318509b9c1aa.jpg"
 
 DONATE_STRING = """Arigato , glad to hear you want to donate!
