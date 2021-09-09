@@ -97,7 +97,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-`Ohayo.. I'M` Mizuhara
+`Ohayo.. I'M` [Mizuhara](https://telegra.ph/file/1ea3d75011561072637b2.jpg)
 `ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`
 Powered by :- [Project Tsukiyomi](t.me/Project_tsukiyomi) [.](https://telegra.ph/file/1ea3d75011561072637b2.jpg)"""
 Mizuhara_IMG = "https://telegra.ph/file/75c2e5861318509b9c1aa.jpg"
