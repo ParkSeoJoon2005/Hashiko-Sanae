@@ -4,7 +4,7 @@ from MizuharaSmexyBot.services.sql import BASE, SESSION
 
 
 class Nsfwatch(BASE):
-    __modname__ = "nsfwatch"
+    __mod_name__ = "nsfwatch"
     chat_id = Column(String(14), primary_key=True)
 
     def __init__(self, chat_id):
