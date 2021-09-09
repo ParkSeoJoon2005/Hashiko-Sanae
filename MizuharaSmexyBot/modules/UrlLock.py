@@ -1,29 +1,11 @@
-# Copyright (C) 2021 TeamDaisyX
-
-
-# This file is part of Daisy (Telegram Bot)
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 import asyncio
 
 from pyrogram import filters
 from pyrogram.errors import RPCError
 
-from DaisyX import BOT_ID
-from DaisyX.db.mongo_helpers.lockurl import add_chat, get_session, remove_chat
-from DaisyX.function.pluginhelpers import (
+from MizuharaSmexyBot import BOT_ID
+from MizuharaSmexyBot.db.mongo_helpers.lockurl import add_chat, get_session, remove_chat
+from MizuharaSnexyBot.function.pluginhelpers import (
     admins_only,
     edit_or_reply,
     get_url,
@@ -37,7 +19,7 @@ from DaisyX.services.pyrogram import pbot
 )
 @admins_only
 async def hmm(_, message):
-    global daisy_chats
+    global mizuhara_chats
     try:
         user_id = message.from_user.id
     except:
