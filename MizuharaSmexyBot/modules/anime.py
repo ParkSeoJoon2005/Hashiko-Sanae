@@ -6,6 +6,7 @@ import textwrap
 import bs4
 import jikanpy
 import requests
+from MizuharaSmexyBot.modules.helper_funcs.alternate import typing_action
 from MizuharaSmexyBot import DEV_USERS, OWNER_ID, DRAGONS, dispatcher
 from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
