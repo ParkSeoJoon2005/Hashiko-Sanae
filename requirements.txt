@@ -73,3 +73,15 @@ opencv-python-headless
 gpytranslate
 wikipedia
 glitch_this
+lyricsgenius
+youtube-search-python
+youtube_dl
+youtube_search
+#googletrans
+CurrencyConverter
+google_trans_new
+carbonnow
+pykeyboard
+aiofiles
+bing_image_downloader
+search_engine_parser
