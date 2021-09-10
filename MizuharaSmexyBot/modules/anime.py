@@ -162,7 +162,7 @@ url = 'https://graphql.anilist.co'
 
 
 
-@typing_action
+@run_async
 def airing(update, context):
     message = update.effective_message
     search_str = message.text.split(' ', 1)
@@ -190,7 +190,7 @@ def airing(update, context):
 
 
 
-@typing_action
+@run_async
 def anime(update, context):
     message = update.effective_message
     search = message.text.split(' ', 1)
@@ -261,7 +261,7 @@ def anime(update, context):
 
 
 
-@typing_action
+@run_async
 def character(update, context):
     message = update.effective_message
     search = message.text.split(' ', 1)
@@ -301,7 +301,7 @@ def character(update, context):
 
 
 
-@typing_action
+@run_async
 def manga(update, context):
     message = update.effective_message
     search = message.text.split(' ', 1)
@@ -367,7 +367,7 @@ def manga(update, context):
 
 
 
-@typing_action
+@run_async
 def user(update, context):
     message = update.effective_message
     args = message.text.strip().split(" ", 1)
@@ -451,7 +451,7 @@ def user(update, context):
 
 
 
-@typing_action
+@run_async
 def upcoming(update, context):
     jikan = jikanpy.jikan.Jikan()
     upcoming = jikan.top('anime', page=1, subtype="upcoming")
