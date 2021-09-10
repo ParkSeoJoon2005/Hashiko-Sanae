@@ -1,5 +1,5 @@
 from emoji import UNICODE_EMOJI
-from googletrans import LANGUAGES, Translator
+from gtranslator import LANGUAGES, Translator
 from MizuharaSmexyBot import dispatcher
 from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
 from telegram import ParseMode, Update
