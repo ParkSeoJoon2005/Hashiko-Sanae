@@ -6,7 +6,6 @@ from telegram.ext import CallbackContext, run_async
 from telegram.error import BadRequest
 import MizuharaSmexyBot.modules.animequotes_strings as animequotes_strings
 from MizuharaSmexyBot import dispatcher
-from MizuharSmexyBot.modules.disable import DisableAbleCommandHandler
 from MizuharaSmexyBot.modules.helper_funcs.chat_status import (is_user_admin)
 from MizuharaSmexyBot.modules.helper_funcs.extraction import extract_user
 @run_async
@@ -24,7 +23,7 @@ __help__ = """
 
 """
 
-ANIMEQUOTES_HANDLER = DisableAbleCommandHandler("animequotes", animequotes)
+ANIMEQUOTES_HANDLER = ("animequotes", animequotes)
 
 dispatcher.add_handler(ANIMEQUOTES_HANDLER)
 
