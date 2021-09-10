@@ -12,7 +12,7 @@ from telegram.utils.helpers import mention_html
 from MizuharaSmexyBot.modules.helper_funcs.alternate import typing_action
 from MizuharaSmexyBot import dispatcher
 from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
-from MizuharaSmexyBot import OWNER_ID, REDIS, dispatcher
+from MizuharaSmexyBot import OWNER_ID, dispatcher
 
 
 info_btn = "More Info 📕"
