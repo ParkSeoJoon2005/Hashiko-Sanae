@@ -9,10 +9,10 @@ from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Upd
 from telegram.ext import CallbackQueryHandler, CommandHandler, run_async, CallbackContext
 from telegram.utils.helpers import mention_html
 
-from SungJinwooRobot.modules.helper_funcs.alternate import typing_action
-from SungJinwooRobot import dispatcher
-from SungJinwooRobot.modules.disable import DisableAbleCommandHandler
-from SungJinwooRobot import OWNER_ID, REDIS, dispatcher
+from MizuharaSmexyBot.modules.helper_funcs.alternate import typing_action
+from MizuharaSmexyBot import dispatcher
+from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
+from MizuharaSmexyBot import OWNER_ID, REDIS, dispatcher
 
 
 info_btn = "More Info 📕"
