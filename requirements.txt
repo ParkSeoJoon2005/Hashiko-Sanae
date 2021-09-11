@@ -90,7 +90,6 @@ alphabet_detector
 beautifulsoup4
 bleach
 cachetools
-coffeehouse
 CurrencyConverter
 emoji
 feedparser
