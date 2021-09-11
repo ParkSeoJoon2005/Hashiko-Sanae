@@ -29,7 +29,7 @@ async def carbon_func(_, message):
         )
     m = await message.reply_text("`Creating Carbon ...`")
     carbon = await make_carbon(message.reply_to_message.text)
-    await message.reply_photo(photo=carbon, caption='@MizuharaSmexyBot')
+    await message.reply_photo(photo=carbon, caption='Made By @MizuharaSmexyBot Checkout @Project_Tsukiyomi')
     await m.delete()
     carbon.close()
 
