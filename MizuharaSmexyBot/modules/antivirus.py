@@ -1,31 +1,12 @@
-# Copyright (C) 2021 TeamDaisyX
-
-
-# This file is part of Daisy (Telegram Bot)
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
 import os
 
 import cloudmersive_virus_api_client
 from telethon.tl import functions, types
 from telethon.tl.types import DocumentAttributeFilename, MessageMediaDocument
 
-from DaisyX.config import get_str_key
-from DaisyX.services.events import register
-from DaisyX.services.telethon import tbot
+from MizuharaSmexyBot.config import get_str_key
+from MizuharaSmexyBot.services.events import register
+from MizuharaSmexyBot.services.telethon import tbot
 
 
 async def is_register_admin(chat, user):
@@ -110,7 +91,7 @@ async def virusscan(event):
         return
 
 
-_mod_name_ = "Virus Scan"
+_mod_name_ = "Virus-Scan"
 _help_ = """
- - /scanit: Scan a file for virus (MAX SIZE = 3MB)
+ ➥ /scanit: Scan a file for virus (MAX SIZE = 3MB)
  """
