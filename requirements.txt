@@ -116,3 +116,14 @@ sqlalchemy==1.3.20
 ujson
 wikipedia
 zalgo-text
+cloudmersive_virus_api_client==3.0.1
+chromedriver==2.24.1
+selenium
+zalgo_text 
+cowpy 
+fontTools
+nltk
+emoji
+better_profanity
+textblob 
+nudepy
