@@ -33,7 +33,7 @@ async def carbon_func(_, message):
     await m.delete()
     carbon.close()
 
-CARBON_HANDLER = DisableAbleCommandHandler("carbon", carbon)
+CARBON_HANDLER = DisableAbleCommandHandler("carbon", convert)
 
 dispatcher.add_handler(CARBON_HANDLER)
 
