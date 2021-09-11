@@ -8,7 +8,10 @@ from bs4 import BeautifulSoup
 from aiohttp import ClientSession
 
 from MizuharaSmexyBot import dispatcher
-from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
+from MizuharaSmexyBot.modules.disable import (
+    DisableAbleCommandHandler,
+    DisableAbleMessageHandler,
+)
 
 aiohttpsession = ClientSession()
 
