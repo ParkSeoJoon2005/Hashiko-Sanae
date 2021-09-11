@@ -4,8 +4,8 @@ from pathlib import Path
 
 from telethon import events
 
-from DaisyX.services.mongo import mongodb as db
-from DaisyX.services.telethon import tbot
+from MizuharaSmexyBot.services.mongo import mongodb as db
+from MizuharaSmexyBot.services.telethon import tbot
 
 gbanned = db.gban
 CMD_LIST = {}
