@@ -221,6 +221,23 @@ For starters click on this button
 
 •[DaisyX](https://github.com/TeamDaisyX/DaisyX)
 
+### Original Works Of
+
+•[SaitamaRobot](https://github.com/animekaizoku/saitamarobot)
+
+•[LaylaRobot](https://github.com/queenarzoo/LaylaRobot)
+
+•[DaisyX](https://github.com/TeamDaisyX/DaisyX)
+
+•[Trojhanz](https://github.com/TroJanzHEX/Image-Editor) For Image Editor
+
+•[TgCalls](https://github.com/MarshalX/tgcalls) For VC Player
+
+•[AsmSafone](https://github.com/AsmSafon) For Many Things
+
+•[EveryThingSuckz](https://t.me/EveryThingSuckz) For NSFW Watch
+
+
 ### ALL DEVS AND Contributors❤
 
 #### • Anurag Sharma (AKA-Pain)    »»  <a href="https://github.com/AnuragSharma080" alt="AnuragSharma080"> <img src="https://img.shields.io/badge/AnuragSharma-90302f?logo=github" /></a> (OWNER)
