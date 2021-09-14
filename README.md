@@ -213,6 +213,14 @@ For starters click on this button
 
 <a href="https://t.me/chizuru_support"><img src="https://img.shields.io/badge/Join-Support%20Group-purple.svg?logo=telegram"></a>
 
+### Inspired From
+
+•[SaitamaRobot](https://github.com/animekaizoku/saitamarobot)
+
+•[LaylaRobot](https://github.com/queenarzoo/LaylaRobot)
+
+•[DaisyX](https://github.com/TeamDaisyX/DaisyX)
+
 ### ALL DEVS AND Contributors❤
 
 #### • Anurag Sharma (AKA-Pain)    »»  <a href="https://github.com/AnuragSharma080" alt="AnuragSharma080"> <img src="https://img.shields.io/badge/AnuragSharma-90302f?logo=github" /></a> (OWNER)
