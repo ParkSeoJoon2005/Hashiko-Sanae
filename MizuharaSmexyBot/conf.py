@@ -1,5 +1,5 @@
 from envparse import env
-from LaylaRobot import LOGGER
+from MizuharaSmexyBot import LOGGER
 
 DEFAULTS = {
     "LOAD_MODULES": True,
@@ -32,3 +32,4 @@ def get_int_key(name, required=False):
         sys.exit(2)
     else:
         return data
+    RMBG_API_KEY = "eXdY9iJkwhsoB9y3F5W9FpCo"
