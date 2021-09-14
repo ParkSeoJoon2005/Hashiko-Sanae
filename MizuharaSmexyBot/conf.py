@@ -4,7 +4,7 @@ import os
 
 
 def get_user_list(config, key):
-    with open('{}/SaitamaRobot/{}'.format(os.getcwd(), config),
+    with open('{}/MizuharaSmexyBot/{}'.format(os.getcwd(), config),
               'r') as json_file:
         return json.load(json_file)[key]
 
@@ -19,10 +19,10 @@ class Config(object):
     API_HASH = "awoo"
     TOKEN = "BOT_TOKEN"  #This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 792109647  # If you dont know, run the bot and do /id in your private chat with it, also an integer
-    OWNER_USERNAME = "Sawada"
-    SUPPORT_CHAT = 'OnePunchSupport'  #Your own group for support, do not add the @
-    JOIN_LOGGER = -1001253661229  #Prints any new group the bot is added to, prints just the name and ID.
-    EVENT_LOGS = -1001190806654  #Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
+    OWNER_USERNAME = "Pain_to_this_world"
+    SUPPORT_CHAT = 'Chizuru_Support'  #Your own group for support, do not add the @
+    JOIN_LOGGER = -1001560081529  #Prints any new group the bot is added to, prints just the name and ID.
+    EVENT_LOGS = -1001560081529  #Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     #RECOMMENDED
     SQLALCHEMY_DATABASE_URI = 'something://somewhat:user@hosturl:port/databasename'  # needed for any database modules
@@ -59,6 +59,7 @@ class Config(object):
     AI_API_KEY = 'awoo'  #For chatbot, get one from https://coffeehouse.intellivoid.net/dashboard
     BL_CHATS = []  # List of groups that you want blacklisted.
     SPAMMERS = None
+    RM_BG_API_KEY = "eXdY9iJkwhsoB9y3F5W9FpCo"
 
 
 class Production(Config):
