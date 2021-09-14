@@ -6,7 +6,7 @@ import requests
 from telethon import types
 from telethon.tl import functions
 
-from MizuharaSmexyBot.config import get_str_key
+from MizuharaSmexyBot.conf import get_str_key
 from MizuharaSmexyBot.services.events import register
 from MizuharaSmexyBot.services.telethon import tbot
 
