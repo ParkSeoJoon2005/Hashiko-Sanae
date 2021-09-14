@@ -1,22 +1,3 @@
-# Copyright (C) 2021 TeamDaisyX
-
-
-# This file is part of Daisy (Telegram Bot)
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
 import io
 import os
 from datetime import datetime
@@ -25,9 +6,9 @@ import requests
 from telethon import types
 from telethon.tl import functions
 
-from DaisyX.config import get_str_key
-from DaisyX.services.events import register
-from DaisyX.services.telethon import tbot
+from MizuharaSmexyBot.config import get_str_key
+from MizuharaSmexyBot.services.events import register
+from MizuharaSmexyBot.services.telethon import tbot
 
 REM_BG_API_KEY = get_str_key("REM_BG_API_KEY", required=False)
 TEMP_DOWNLOAD_DIRECTORY = "./"
@@ -94,7 +75,7 @@ async def _(event):
         await event.reply("Background Removed in {} seconds".format(ms))
     else:
         await event.reply(
-            "remove.bg API returned Errors. Please report to @DaisySupport_Official\n`{}".format(
+            "remove.bg API returned Errors. Please report to @Chizuru_Support\n`{}".format(
                 output_file_name.content.decode("UTF-8")
             )
         )
