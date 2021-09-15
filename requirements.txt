@@ -19,8 +19,6 @@ psutil
 aiohttp>=2.2.5
 Pillow>=4.2.0
 CurrencyConverter
-#googletrans
-google_trans_new
 jikanpy
 speedtest-cli
 coffeehouse==2.2.4
@@ -72,13 +70,6 @@ opencv-python-headless
 gpytranslate
 wikipedia
 glitch_this
-lyricsgenius
-youtube-search-python
-youtube_dl
-youtube_search
-#googletrans
-CurrencyConverter
-google_trans_new
 carbonnow
 pykeyboard
 aiofiles
@@ -124,6 +115,4 @@ cowpy
 fontTools
 nltk
 emoji
-better_profanity
 textblob 
-nudepy
