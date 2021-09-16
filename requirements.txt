@@ -67,7 +67,6 @@ nudepy
 motor
 cloudscraper
 opencv-python-headless
-gpytranslate
 wikipedia
 glitch_this
 carbonnow
@@ -86,8 +85,6 @@ feedparser
 future
 geopy
 git+https://github.com/starry69/python-markdown2.git
-#googletrans
-google_trans_new
 humanize
 jikanpy
 lxml
