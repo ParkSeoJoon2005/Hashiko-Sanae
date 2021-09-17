@@ -17,8 +17,6 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-
 LOGGER = logging.getLogger(__name__)
 
 # if version < 3.6, stop bot.
