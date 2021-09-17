@@ -20,7 +20,7 @@ __help__ = "/paste - To Paste Replied Text Or Document To A Pastebin"
 pattern = re.compile(r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$")
 
 
-@app.on_message(filters.command("paste") & ~filters.edited)
+@run_async(filters.command("paste") & ~filters.edited)
 @capture_err
 async def paste_func(_, message):
     if not message.reply_to_message:
