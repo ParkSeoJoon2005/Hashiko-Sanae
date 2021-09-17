@@ -14,9 +14,22 @@ StartTime = time.time()
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
-    level=logging.INFO,
-)
 
+  
+   level=logging.INFO,
+
+    loop = asyncio.get_event_loop()
+loop.run_until_complete(load_sudoers())
+
+if not HEROKU:
+    app2 = Client(
+        "userbot",
+        phone_number=PHONE_NUMBER,
+        api_id=API_ID,
+        api_hash=API_HASH,
+    )
+else:
+)
 aiohttpsession = ClientSession()
 
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
