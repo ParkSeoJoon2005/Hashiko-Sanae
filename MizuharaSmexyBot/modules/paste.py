@@ -16,9 +16,7 @@ PASTE_HANDLER = DisableAbleCommandHandler("paste", paste)
 dispatcher.add_handler(PASTE_HANDLER)
 
 __mod_name__ = "Paste"
-__command_list__ = ["Paste"]
-__handlers__ = [PASTE_HANDLER]
-__help__ = "/paste - To Paste Replied Text Or Document To A Pastebin"
+__HELP__ = "/paste - To Paste Replied Text Or Document To A Pastebin"
 pattern = re.compile(r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$")
 
 
