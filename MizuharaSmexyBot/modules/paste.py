@@ -9,8 +9,8 @@ from MizuharaSmexyBot.core.decorators.errors import capture_err
 from MizuharaSmexyBot.core.keyboard import ikb
 from MizuharaSmexyBot.utils.pastebin import paste
 
-__MODULE__ = "Paste"
-__HELP__ = "/paste - To Paste Replied Text Or Document To A Pastebin"
+__mod_name__ = "Paste"
+__help__ = "/paste - To Paste Replied Text Or Document To A Pastebin"
 pattern = re.compile(r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$")
 
 
