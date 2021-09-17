@@ -12,7 +12,7 @@ import aiofiles
 import speedtest
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from pyrogram.types import Message
-from MizuharaSmexyBot.utils.dbfunctions import start_restart_stage
+from MizuharaSmexyBot.utils.dbfunc import start_restart_stage
 from MizuharaSmexyBot.utils.http import get, post
 
 
