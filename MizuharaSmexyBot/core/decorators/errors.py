@@ -1,12 +1,10 @@
-""" WRITTEN BY @pokurt, https://github.com/pokurt"""
-
 import sys
 import traceback
 from functools import wraps
 
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
-from wbb import LOG_GROUP_ID, app
+from MizuharaSmexyBot import LOG_GROUP_ID, app
 
 
 def split_limits(text):
