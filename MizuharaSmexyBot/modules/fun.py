@@ -5,9 +5,6 @@ import time
 from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, run_async, Filters
-
-import MizuharaSmexyBot.modules.fun_strings as fun_strings
-import MizuharaSmexyBot.modules.helper_funcs.string_store as fun
 from MizuharaSmexyBot import dispatcher
 from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 from MizuharaSmexyBot.modules.helper_funcs.alternate import typing_action
