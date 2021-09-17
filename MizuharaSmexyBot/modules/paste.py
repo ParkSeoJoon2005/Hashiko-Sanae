@@ -9,6 +9,8 @@ from MizuharaSmexyBot.core.decorators.errors import capture_err
 from MizuharaSmexyBot.core.keyboard import ikb
 from MizuharaSmexyBot.utils.pastebin import paste
 from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
+from telegram.ext import CallbackContext, run_async
+
 
 PASTE_HANDLER = DisableAbleCommandHandler("paste", paste)
 dispatcher.add_handler(PASTE_HANDLER)
@@ -21,7 +23,6 @@ pattern = re.compile(r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$")
 
 
 @run_async(filters.command("paste") & ~filters.edited)
-@capture_err
 async def paste_func(_, message):
     if not message.reply_to_message:
         return await message.reply("Reply To A Message With /paste")
