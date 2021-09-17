@@ -8,7 +8,7 @@ from MizuharaSmexyBot import dispatcher
 from MizuharaSmexyBot.core.decorators.errors import capture_err
 from MizuharaSmexyBot.core.keyboard import ikb
 from MizuharaSmexyBot.utils.pastebin import paste
-
+from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
 
 PASTE_HANDLER = DisableAbleCommandHandler("paste", paste)
 dispatcher.add_handler(PASTE_HANDLER)
