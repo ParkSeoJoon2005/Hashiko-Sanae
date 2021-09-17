@@ -17,30 +17,6 @@ logging.basicConfig(
 
   
    level=logging.INFO,
-
-    loop = asyncio.get_event_loop()
-loop.run_until_complete(load_sudoers())
-
-if not HEROKU:
-    app2 = Client(
-        "userbot",
-        phone_number=PHONE_NUMBER,
-        api_id=API_ID,
-        api_hash=API_HASH,
-    )
-else:
-)
-aiohttpsession = ClientSession()
-
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-app = Client("wbb", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
-
-print("[INFO]: STARTING BOT CLIENT")
-app.start()
-print("[INFO]: STARTING USERBOT CLIENT")
-app2.start()
-
-
 LOGGER = logging.getLogger(__name__)
 
 # if version < 3.6, stop bot.
