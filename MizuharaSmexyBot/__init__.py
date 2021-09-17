@@ -16,7 +16,8 @@ logging.basicConfig(
     handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
 
   
-   level=logging.INFO,
+   )
+
 LOGGER = logging.getLogger(__name__)
 
 # if version < 3.6, stop bot.
