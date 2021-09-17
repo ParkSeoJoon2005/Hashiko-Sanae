@@ -17,6 +17,17 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
+aiohttpsession = ClientSession()
+
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+app = Client("wbb", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
+
+print("[INFO]: STARTING BOT CLIENT")
+app.start()
+print("[INFO]: STARTING USERBOT CLIENT")
+app2.start()
+
+
 LOGGER = logging.getLogger(__name__)
 
 # if version < 3.6, stop bot.
