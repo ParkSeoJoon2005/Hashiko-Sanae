@@ -2,8 +2,8 @@ import os
 from json import JSONDecodeError
 import requests
 from pyrogram import filters
-from JisooX.more.pluginhelpers import admins_only, edit_or_reply, fetch_audio
-from JisooX.pyrogramee.pyrogram import pbot
+from MizuharaSmexyBot.more.pluginhelpers import admins_only, edit_or_reply, fetch_audio
+from MizuharaSmexyBot.pyrogramee.pyrogram import pbot
 
 
 @pbot.on_message(filters.command(["identify", "shazam"]))
@@ -53,5 +53,6 @@ __mod_name__ = "Shazam"
 __help__ = """
 *SHAZAMMER*:
 Find any song with it's music or part of song
- - /shazam : identify the song from Friday's Database
+ - /shazam : identify the song from Mizuhara'Databaste
+ Special Credits to Friday Userbot.
 """
