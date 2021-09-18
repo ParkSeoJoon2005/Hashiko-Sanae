@@ -1,8 +1,8 @@
 import os
 from PIL import Image, ImageFont, ImageDraw
 import textwrap
-from JisooX.events import register
-from JisooX import LOGGER, TEMP_DOWNLOAD_DIRECTORY, telethn as bot
+from MizuharaSmexyBot.events import register
+from MizuharaSmexyBot import LOGGER, TEMP_DOWNLOAD_DIRECTORY, telethn as bot
 
 
 @register(pattern="^/mmf ?(.*)")
@@ -41,7 +41,7 @@ async def drawText(image_path, text):
     if os.name == "nt":
         fnt = "ariel.ttf"
     else:
-        fnt = "./JisooX/resources/Lucky-Boss.ttf"
+        fnt = "./MizuharaSmexyBot/resources/Lucky-Boss.ttf"
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
     if ";" in text:
         upper_text, lower_text = text.split(";")
