@@ -6,7 +6,7 @@ import socket
 from asyncio import get_running_loop
 from functools import partial
 from pyrogram import filters
-from JisooX import pbot as app
+from MizuharaSmexyBot import pbot as app
 
 
 def _netcat(host, port, content):
