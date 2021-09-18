@@ -3,8 +3,8 @@ from tswift import Song
 from telegram import Bot, Update, Message, Chat
 from telegram.ext import run_async
 
-from JisooX import dispatcher
-from JisooX.modules.disable import DisableAbleCommandHandler
+from MizuharaSmexyBot import dispatcher
+from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
