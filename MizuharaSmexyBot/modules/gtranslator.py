@@ -4,8 +4,8 @@ from googletrans import Translator, LANGUAGES
 from telegram import Bot, Update, ParseMode
 from telegram.ext import run_async
 
-from JisooX import dispatcher
-from JisooX.modules.disable import DisableAbleCommandHandler
+from MizuharaSmexyBot import dispatcher
+from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
@@ -102,7 +102,7 @@ def totranslate(bot: Bot, update: Update):
                 message.reply_text("Translated from `{}` to `{}`:\n`{}`".format(source_lang, dest_lang, tekstr.text), parse_mode=ParseMode.MARKDOWN)
 
     except IndexError:
-        update.effective_message.reply_text("Reply to messages or write messages from other languages ​​for translating into the intended language\n\nExample: `/tr en ml` to translate from English to Malayalam\nOr use: `/tr ml` for automatic detection and translating it into Malayalam.\nSee [List of Language Codes](https://telegra.ph/%C5%9E%E0%B8%AA%E2%84%9D%E0%B8%AA%D1%92-06-28) for a list of language codes.", parse_mode="markdown", disable_web_page_preview=True)
+        update.effective_message.reply_text("Reply to messages or write messages from other languages ​​for translating into the intended language\n\nExample: `/tr en ml` to translate from English to Malayalam\nOr use: `/tr ml` for automatic detection and translating it into Malayalam.\nSee [List of Language Codes](https://t.me/chizuru_support/626) for a list of language codes.", parse_mode="markdown", disable_web_page_preview=True)
     except ValueError:
         update.effective_message.reply_text("The intended language is not found!")
     else:
@@ -116,6 +116,6 @@ TRANSLATE_HANDLER = DisableAbleCommandHandler("tr", totranslate)
 
 dispatcher.add_handler(TRANSLATE_HANDLER)
 
-__mod_name__ = "TRANSLATOR"
+__mod_name__ = "G-Translator"
 __command_list__ = ["tr"]
 __handlers__ = [TRANSLATE_HANDLER]
