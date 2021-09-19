@@ -1,10 +1,10 @@
 from functools import wraps
 from telegram import Bot, Chat, ChatMember, Update, User, ParseMode
-from MizuharaSmexyBot import dispatcher, DEL_CMDS, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, DEV_USERS
+from MizuharaSmexyBot import dispatcher, DEL_CMDS, SUPPORT_USERS, SUDO_USERS, DEV_USERS
 
 
 def is_whitelist_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
-    return user_id in WHITELIST_USERS or user_id in SUPPORT_USERS or user_id in SUDO_USERS or user_id in DEV_USERS
+    return user_id in SUPPORT_USERS or user_id in SUDO_USERS or user_id in DEV_USERS
 
 
 def is_support_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
