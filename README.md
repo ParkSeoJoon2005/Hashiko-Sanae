@@ -222,6 +222,7 @@ For starters click on this button
 •[DaisyX](https://github.com/TeamDaisyX/DaisyX)
 
 ### Original Works Of
+•[WilliamButcherBot](https://github.com/TheHamkerCat/WilliamButcherBot)
 
 •[SaitamaRobot](https://github.com/animekaizoku/saitamarobot)
 
