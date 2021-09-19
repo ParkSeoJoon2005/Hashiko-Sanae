@@ -1,4 +1,5 @@
 Telethon==1.16.4
+pyrate-limiter
 future
 emoji
 countryinfo
