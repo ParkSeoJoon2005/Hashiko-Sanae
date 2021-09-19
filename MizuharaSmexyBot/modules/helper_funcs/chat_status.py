@@ -1,6 +1,6 @@
 from functools import wraps
 from telegram import Bot, Chat, ChatMember, Update, User, ParseMode
-from JisooX import dispatcher, DEL_CMDS, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, DEV_USERS
+from MizuharaSmexyBot import dispatcher, DEL_CMDS, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, DEV_USERS
 
 
 def is_whitelist_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
@@ -308,5 +308,5 @@ def connection_status(func):
 
 
 #Workaround for circular import with connection.py
-from JisooX.modules import connection
+from MizuharaSmexyBot.modules import connection
 connected = connection.connected
