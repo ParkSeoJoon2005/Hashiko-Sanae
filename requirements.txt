@@ -1,5 +1,6 @@
 Telethon==1.16.4
 pyrate-limiter
+cachetools
 future
 emoji
 countryinfo
