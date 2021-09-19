@@ -4,7 +4,6 @@ from time import perf_counter
 
 from cachetools import TTLCache
 from telegram import Chat, ChatMember, ParseMode, Update
-from telegram.ext import CallbackContext
 
 from MizuharaSmexyBot import (
     DEL_CMDS,
