@@ -1,7 +1,7 @@
 from functools import wraps
 from cachetools import TTLCache
 from threading import RLock
-from MizuaharaSmexyBot import (DEL_CMDS, DEV_USERS, DRAGONS, SUPPORT_CHAT, DEMONS,
+from MizuharaSmexyBot import (DEL_CMDS, DEV_USERS, DRAGONS, SUPPORT_CHAT, DEMONS,
                           TIGERS, WOLVES, dispatcher)
 
 from telegram import Chat, ChatMember, ParseMode, Update
