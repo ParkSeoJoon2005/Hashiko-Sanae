@@ -69,3 +69,4 @@ PyDictionary==2.0.1
 pymongo
 motor
 dnspython
+better_profanity
