@@ -1,68 +1,99 @@
-import os
-
-from PIL import Image, ImageDraw, ImageFont
-
+from MizuharaSmexyBot.events import register
 from MizuharaSmexyBot import OWNER_ID
 from MizuharaSmexyBot import telethn as tbot
-from MizuharaSmexyBot.events import register
+import os 
+from PIL import Image, ImageDraw, ImageFont
+import shutil 
+import random, re
+import glob
+import time
+from telethon.tl.types import InputMessagesFilterPhotos
+import io
+import requests
+from io import BytesIO
+from requests import get
 
-FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 #Add telegraph media links of profile pics that are to be used
-TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/e354ce72d5cc6a1d27c4d.jpg", 
-                         "https://telegra.ph/file/8f9ff3d743e6707a61489.jpg", 
-                         "https://telegra.ph/file/bfc97f4abc4bec6fe860d.jpg", 
-                         "https://telegra.ph/file/5ef0f060023600ec08c19.jpg",
-                         "https://telegra.ph/file/a448465a3a8a251170f76.jpg",
-                         "https://telegra.ph/file/eb0ac1557668a98a38cb6.jpg", 
-                         "https://telegra.ph/file/fdb3691a17a2c91fbe76c.jpg", 
-                         "https://telegra.ph/file/ccdf69ebf6cb85c52a25b.jpg",
-                         "https://telegra.ph/file/2adffc55ac0c9733ecc7f.jpg", 
-                         "https://telegra.ph/file/faca3b435da33f2f156f1.jpg", 
-                         "https://telegra.ph/file/93d0a48c31e16f036f0e8.jpg", 
-                         "https://telegra.ph/file/9ed89dc742b172a779312.jpg",
-                         "https://telegra.ph/file/0b4c19a19fb834d922d66.jpg", 
-                         "https://telegra.ph/file/a95a0deb86f642129b067.jpg", 
-                         "https://telegra.ph/file/c4c3d8b5cfc3cc5040833.jpg", 
-                         "https://telegra.ph/file/1e1a1b52b9a313e066a04.jpg",
-                         "https://telegra.ph/file/a582950a8a259efdcbbc0.jpg",
-                         "https://telegra.ph/file/9c3a784d45790b193ca36.jpg", 
-                         "https://telegra.ph/file/6aa74b17ae4e7dc46116f.jpg", 
-                         "https://telegra.ph/file/e63cf624d1b68a5c819b6.jpg",
-                         "https://telegra.ph/file/7e420ad5995952ba1c262.jpg",
-                         "https://telegra.ph/file/c7a4dc3d2a9a422c19723.jpg", 
-                         "https://telegra.ph/file/163c7eba56fd2e8c266e4.jpg", 
-                         "https://telegra.ph/file/5c87b63ae326b5c3cd713.jpg",
-                         "https://telegra.ph/file/344ca22b35868c0a7661d.jpg", 
-                         "https://telegra.ph/file/a0ef3e56f558f04a876aa.jpg", 
-                         "https://telegra.ph/file/217b997ad9b5af8b269d0.jpg", 
-                         "https://telegra.ph/file/b3595f99b221c56a5679b.jpg",
-                         "https://telegra.ph/file/aba7f4b4485c5aae53c52.jpg", 
-                         "https://telegra.ph/file/209ca51dba6c0f1fba85f.jpg", 
-                         "https://telegra.ph/file/2a0505ee2630bd6d7acca.jpg", 
-                         "https://telegra.ph/file/d193d4191012f4aafd4d2.jpg",
-                         "https://telegra.ph/file/47e2d151984bd54a5d947.jpg",
-                         "https://telegra.ph/file/2a6c735b47db947b44599.jpg", 
-                         "https://telegra.ph/file/7567774412fb76ceba95c.jpg", 
-                         "https://telegra.ph/file/6dd8b0edec92b24985e13.jpg",
-                         "https://telegra.ph/file/dcf5e16cc344f1c030469.jpg",
-                         "https://telegra.ph/file/0718be0bd52a2eb7e36aa.jpg", 
-                         "https://telegra.ph/file/0d7fcb82603b5db683890.jpg", 
-                         "https://telegra.ph/file/44595caa95717f4db4788.jpg",
-                         "https://telegra.ph/file/f3a063d884d0dcde437e3.jpg", 
-                         "https://telegra.ph/file/733425275da19cbed0822.jpg", 
-                         "https://telegra.ph/file/aff5223e1aa29f212a46a.jpg", 
-                         "https://telegra.ph/file/45ccfa3ef878bea9cfc02.jpg",
-                         "https://telegra.ph/file/a38aa50d009835177ac16.jpg", 
-                         "https://telegra.ph/file/53e25b1b06f411ec051f0.jpg", 
-                         "https://telegra.ph/file/96e801400487d0a120715.jpg", 
-                         "https://telegra.ph/file/6ae8e799f2acc837e27eb.jpg",
-                         "https://telegra.ph/file/265ff1cebbb7042bfb5a7.jpg",
-                         "https://telegra.ph/file/4c8c9cd0751eab99600c9.jpg", 
-                         "https://telegra.ph/file/1c6a5cd6d82f92c646c0f.jpg", 
-                         "https://telegra.ph/file/2c1056c91c8f37fea838a.jpg",
-                         "https://telegra.ph/file/f140c121d03dfcaf4e951.jpg", 
-                         "https://telegra.ph/file/39f7b5d1d7a3487f6ba69.jpg"
+TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/b3da75d390da29a9c5145.jpg",
+                         "https://telegra.ph/file/ae614f9fd0bbeba0350af.jpg",
+                         "https://telegra.ph/file/08c5fbe14cc4b13d1de05.jpg",
+                         "https://telegra.ph/file/66614a049d74fe2a220dc.jpg",
+                         "https://telegra.ph/file/9cc1e4b24bfa13873bd66.jpg",
+                         "https://telegra.ph/file/792d38bd74b0c3165c11d.jpg",
+                         "https://telegra.ph/file/e1031e28a4aa4d8bd7c9b.jpg",
+                         "https://telegra.ph/file/2be9027c55b5ed463fc18.jpg",
+                         "https://telegra.ph/file/9fd71f8d08158d0cc393c.jpg",
+                         "https://telegra.ph/file/627105074f0456f42058b.jpg",
+                         "https://telegra.ph/file/62b712f741382d3c171cd.jpg",
+                         "https://telegra.ph/file/496651e0d5e4d22b8f72d.jpg",
+                         "https://telegra.ph/file/6619d0eee2c35e022ee74.jpg",
+                         "https://telegra.ph/file/f72fcb27c9b1e762d184b.jpg",
+                         "https://telegra.ph/file/01eac0fe1a722a864d7de.jpg",
+                         "https://telegra.ph/file/bdcb746fbfdf38f812873.jpg",
+                         "https://telegra.ph/file/d13e036a129df90651deb.jpg",
+                         "https://telegra.ph/file/ab6715ce9a63523bd0219.jpg",
+                         "https://telegra.ph/file/c243f4e80ebf0110f9f00.jpg",
+                         "https://telegra.ph/file/ff9053f2c7bfb2badc99e.jpg",
+                         "https://telegra.ph/file/00b9ebbb816285d9a59f9.jpg",
+                         "https://telegra.ph/file/ad92e1c829d14afa25cf2.jpg",
+                         "https://telegra.ph/file/58d45cc3374e7b28a1e67.jpg",
+                         "https://telegra.ph/file/4140a0b3f27c302fd81cb.jpg",
+                         "https://telegra.ph/file/c4db2b5c84c1d90f5ac8a.jpg",
+                         "https://telegra.ph/file/c0da5080a3ff7643ddeb4.jpg",
+                         "https://telegra.ph/file/79fad473ffe888ed771b2.jpg",
+                         "https://telegra.ph/file/eafd526d9dcc164d7269f.jpg",
+                         "https://telegra.ph/file/98b50e8424dd2be9fc127.jpg",
+                         "https://telegra.ph/file/c1ad29c189162a1404749.jpg",
+                         "https://telegra.ph/file/2d288450ebecc500addbd.jpg",
+                         "https://telegra.ph/file/9715353976a99becd7632.jpg",
+                         "https://telegra.ph/file/87670b02a1004bc02bd8d.jpg",
+                         "https://telegra.ph/file/70789cd69114939a78242.jpg",
+                         "https://telegra.ph/file/1566bd334f00645cfa993.jpg",
+                         "https://telegra.ph/file/9727c37bb8c633208b915.jpg",
+                         "https://telegra.ph/file/27467ef55fab117ccb278.jpg",
+                         "https://telegra.ph/file/b9c62ff7810d9e84e9e2c.jpg",
+                         "https://telegra.ph/file/87d22f2c95413059dda4e.jpg",
+                         "https://telegra.ph/file/e528a731accbcdea140e3.jpg",
+                         "https://telegra.ph/file/ee3f20c3ce71dc37fecb2.jpg",
+                         "https://telegra.ph/file/a049f78377a5b8257294d.jpg",
+                         "https://telegra.ph/file/54d22d39ea89423b7533f.jpg",
+                         "https://telegra.ph/file/d90baa59b6fe2bc3091d3.jpg",
+                         "https://telegra.ph/file/b9b3f80dc4635faaeb472.jpg",
+                         "https://telegra.ph/file/d64be0a98f441a33d2aef.jpg",
+                         "https://telegra.ph/file/e2c59ac97a900bab5ad7d.jpg",
+                         "https://telegra.ph/file/41baf461b0a34f1a881a9.jpg",
+                         "https://telegra.ph/file/8d4082052b4bd0a8cc862.jpg",
+                         "https://telegra.ph/file/e7d6e0c511137ad67d843.jpg",
+                         "https://telegra.ph/file/d7b97ea806d4a905b71c4.jpg",
+                         "https://telegra.ph/file/6bec48ea2c96cf3d668a4.jpg",
+                         "https://telegra.ph/file/aa64389b70e0de02d18c5.jpg",
+                         "https://telegra.ph/file/2f75d964a59a3a4ae90e0.jpg",
+                         "https://telegra.ph/file/f408df72c57cfc05e734f.jpg",
+                         "https://telegra.ph/file/9d88d9dfb50106bc43c91.jpg",
+                         "https://telegra.ph/file/a5a6e0f9d172fa386621e.jpg",
+                         "https://telegra.ph/file/b0fc771c91409ee5cd4dc.jpg",
+                         "https://telegra.ph/file/b0fc771c91409ee5cd4dc.jpg",
+                         "https://telegra.ph/file/f75e59ebd4059f394479e.jpg",
+                         "https://telegra.ph/file/fc0308f59023d0c997166.jpg",
+                         "https://telegra.ph/file/7e1c04947f6afb6cdf25c.jpg",
+                         "https://telegra.ph/file/6279bb4be7e48da194353.jpg",
+                         "https://telegra.ph/file/616784fcd89f13e789685.jpg",
+                         "https://telegra.ph/file/803e7dd9fafdb086bce4a.jpg",
+                         "https://telegra.ph/file/d7338861b7f996ec9d40d.jpg",
+                         "https://telegra.ph/file/828730cd4d73333eaf129.jpg",
+                         "https://telegra.ph/file/36c9321161d49c4b3d671.jpg",
+                         "https://telegra.ph/file/ebeae90b99fe482d11784.jpg",
+                         "https://telegra.ph/file/70f38f92fe8d3060a31e4.jpg",
+                         "https://telegra.ph/file/db12cf905f557487abc60.jpg",
+                         "https://telegra.ph/file/0f9be531164c927ded8ec.jpg",
+                         "https://telegra.ph/file/57fb7a6df3d666878c6f3.jpg",
+                         "https://telegra.ph/file/242930d9f7aaa0b0729fd.jpg",
+                         "https://telegra.ph/file/883f255792d2c2ebdd5f5.jpg",
+                         "https://telegra.ph/file/36a9c0c26967edf90d42d.jpg",
+                         "https://telegra.ph/file/03bdaf253c43fc97adbbe.jpg",
+                         "https://telegra.ph/file/5826715ff0895a5321d2d.jpg",
+                         "https://telegra.ph/file/9849b3940f063b065f4e3.jpg"
                          ]
 
 @register(pattern="^/logo ?(.*)")
@@ -71,85 +102,43 @@ async def lego(event):
  if event.sender_id == OWNER_ID:
      pass
  else:
-     
+
     if not quew:
-       await event.reply('Provide Some Text To Draw!')
+       await event.reply('`Please add text to the image.`')
        return
     else:
        pass
- await event.reply('Creating your logo...wait!')
+ pesan = await event.reply('`Processing..`')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open('./MizuharaSmexyBot/resources/blackbg.jpg')
+    randc = random.choice(TELEGRAPH_MEDIA_LINKS)
+    img = Image.open(io.BytesIO(requests.get(randc).content))
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
-    fillcolor = "gold"
+    fillcolor = "black"
     shadowcolor = "blue"
-    font = ImageFont.truetype("./MizuharaSmexyBot/resources/Chopsic.otf", 330)
+    fnt = glob.glob("./MizuharaSmexyBot/logopom/*")
+    randf = random.choice(fnt)
+    font = ImageFont.truetype(randf, 120)
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
     draw.text(((image_widthz-w)/2, (image_heightz-h)/2), text, font=font, fill=(255, 255, 255))
     x = (image_widthz-w)/2
     y= ((image_heightz-h)/2+6)
-    draw.text((x, y), text, font=font, fill="black", stroke_width=25, stroke_fill="yellow")
-    fname2 = "LogoByMizuhara.png"
-    img.save(fname2, "png")
-    await tbot.send_file(event.chat_id, fname2, caption="Made By @Smexy_updates Our Network @Project_tsukiyomi")
-    if os.path.exists(fname2):
-            os.remove(fname2)
+    draw.text((x, y), text, font=font, fill="white", stroke_width=5, stroke_fill="black")
+    fname="Mizuhara.png"
+    img.save(fname, "png")
+    await tbot.send_file(event.chat_id, file=fname, caption="Made by @Mizuhara_Ro_Bot\n\n• Support @chizuru_support")         
+    await pesan.delete()
+    if os.path.exists(fname):
+            os.remove(fname)
  except Exception as e:
-   await event.reply(f'Error Report @chizuru_support, {e}')
+    await event.reply(f'Error, Report @chizuru_support, {e}')
 
 
-
-   
-@register(pattern="^/wlogo ?(.*)")
-async def lego(event):
- quew = event.pattern_match.group(1)
- if event.sender_id == OWNER_ID:
-     pass
- else:
-     
-    if not quew:
-       await event.reply('Provide Some Text To Draw!')
-       return
-    else:
-       pass
- await event.reply('Creating your logo...wait!')
- try:
-    text = event.pattern_match.group(1)
-    img = Image.open('./MizuharaSmexyBot/resources/blackbg.jpg')
-    draw = ImageDraw.Draw(img)
-    image_widthz, image_heightz = img.size
-    pointsize = 500
-    fillcolor = "white"
-    shadowcolor = "blue"
-    font = ImageFont.truetype(".MizuharaSmexyBot/resources/Maghrib.ttf", 1000)
-    w, h = draw.textsize(text, font=font)
-    h += int(h*0.21)
-    image_width, image_height = img.size
-    draw.text(((image_widthz-w)/2, (image_heightz-h)/2), text, font=font, fill=(255, 255, 255))
-    x = (image_widthz-w)/2
-    y= ((image_heightz-h)/2+6)
-    draw.text((x, y), text, font=font, fill="white", stroke_width=0, stroke_fill="white")
-    fname2 = "LogoByMizuhara.png"
-    img.save(fname2, "png")
-    await tbot.send_file(event.chat_id, fname2, caption="Made BY @Project_Tsukiyomi")
-    if os.path.exists(fname2):
-            os.remove(fname2)
- except Exception as e:
-   await event.reply(f'Error Report @chizuru_support, {e}')
-
-file_help = os.path.basename(__file__)
-file_help = file_help.replace(".py", "")
-file_helpo = file_help.replace("_", " ")
-
-
+__mod_name__ = "LogoMaker"
 __help__ = """
- ➥ /logo text :  Create your logo with your name
- ➥ /wlogo text :  Create your logo with your name
-
- """
-__mod_name__ = "Logo-Maker"
+/logo [text] create cool logo with your name!
+"""
