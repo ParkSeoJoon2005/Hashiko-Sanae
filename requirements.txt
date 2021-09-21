@@ -111,3 +111,4 @@ emoji
 textblob 
 googletrans
 google_trans_new
+effective_chat
