@@ -75,13 +75,8 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-✦ Hi, My name is Mizuhara Chizuru[.](https://telegra.ph/file/3c9d1bad59a0666786887.jpg)
-
-➛ I am an Anime themed group management bot ××
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-`Maintained By` @Pain_to_this_world
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-➛ Find the list of available commands with /help ××
+Hi I am [Mizuhara](https://telegra.ph/file/3c9d1bad59a0666786887.jpg)
+`An Powerful Anime Themed Group Manager Bot hit ✨Help and Commands✨ TO see what I am capable of by`[@Project_Tsukiyomi](https://t.me/project_tsukiyomi).
 """
 
 buttons = [
