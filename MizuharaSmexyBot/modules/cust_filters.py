@@ -15,25 +15,25 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html, escape_markdown
 
-from SaitamaRobot import dispatcher, LOGGER, DRAGONS
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot.modules.helper_funcs.handlers import MessageHandlerChecker
-from SaitamaRobot.modules.helper_funcs.chat_status import user_admin
-from SaitamaRobot.modules.helper_funcs.extraction import extract_text
-from SaitamaRobot.modules.helper_funcs.filters import CustomFilters
-from SaitamaRobot.modules.helper_funcs.misc import build_keyboard_parser
-from SaitamaRobot.modules.helper_funcs.msg_types import get_filter_type
-from SaitamaRobot.modules.helper_funcs.string_handling import (
+from MizuharaSmexyBot import dispatcher, LOGGER, DRAGONS
+from MizuharaSmexyBot.modules.disable import DisableAbleCommandHandler
+from MizuharaSmexyBot.modules.helper_funcs.handlers import MessageHandlerChecker
+from MizuharaSmexyBot.modules.helper_funcs.chat_status import user_admin
+from MizuharaSmexyBot.modules.helper_funcs.extraction import extract_text
+from MizuharaSmexyBot.modules.helper_funcs.filters import CustomFilters
+from MizuharaSmexyBot.modules.helper_funcs.misc import build_keyboard_parser
+from MizuharaSmexyBot.modules.helper_funcs.msg_types import get_filter_type
+from MizuharaSmexyBot.modules.helper_funcs.string_handling import (
     split_quotes,
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
 )
-from SaitamaRobot.modules.sql import cust_filters_sql as sql
+from MizuharaSmexyBot.modules.sql import cust_filters_sql as sql
 
-from SaitamaRobot.modules.connection import connected
+from MizuharaSmexyBot.modules.connection import connected
 
-from SaitamaRobot.modules.helper_funcs.alternate import send_message, typing_action
+from MizuharaSmexyBot.modules.helper_funcs.alternate import send_message, typing_action
 
 HANDLER_GROUP = 10
 
