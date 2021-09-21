@@ -33,7 +33,7 @@ from MizuharaSmexyBot.modules.sql import cust_filters_sql as sql
 
 from MizuharaSmexyBot.modules.connection import connected
 
-from LaylaRobot.modules.helper_funcs.alternate import send_message, typing_action
+from MizuharaSmexyBot.modules.helper_funcs.alternate import send_message, typing_action
 
 HANDLER_GROUP = 10
 
