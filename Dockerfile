@@ -1,5 +1,5 @@
 # Python Based Image
-FROM python:3.8.5-slim-buster
+FROM python:3.9.7-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
