@@ -1,4 +1,4 @@
-<h3 align="center"><b>✨MizuharaSmexyBot✨</b></h9>
+<h3 align="center"><b>✨ MizuharaSmexyBot ✨</b></h9>
 
 <h6 align="center">A Powerful, Smart And Simple Group Manager <br> ... Written with AioGram , Pyrogram and Telethon...</h4>
 <p align='center'>
@@ -8,7 +8,7 @@
 
 
 ### Click Below Image To Deploy On
-### 💙Heroku💙
+### 💙 Heroku 💙
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/AnuragSharma080/MizuharaSmexyBot.git"><img src="https://telegra.ph/file/923ca8d23025ee79ec78a.jpg" width="400"></a></p>
 <p align="center">
 <a href="https://app.codacy.com/manual/AnuragSharma080/mizuharasmexybot/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
@@ -207,7 +207,7 @@ For queries or any issues regarding the bot please open an issue ticket or visit
 For starters click on this button 
 </details>  
 
-## Support💜
+## Support 💜
 
 <a href="https://t.me/smexy_updates"><img src="https://img.shields.io/badge/Join-Updates%20Channel-violet.svg?logo=Telegram"></a>
 
@@ -239,7 +239,7 @@ For starters click on this button
 •[EveryThingSuckz](https://t.me/EveryThingSuckz) For NSFW Watch
 
 
-### ALL DEVS AND Contributors❤
+### ALL DEVS AND Contributors ❤
 
 #### • Anurag Sharma (AKA-Pain)    »»  <a href="https://github.com/AnuragSharma080" alt="AnuragSharma080"> <img src="https://img.shields.io/badge/AnuragSharma-90302f?logo=github" /></a> (OWNER)
 
