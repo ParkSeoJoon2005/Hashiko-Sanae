@@ -6,7 +6,7 @@ gtts
 faker
 beautifulsoup4
 python-telegram-bot==12.8
-sqlalchemy==1.3.20
+sqlalchemy==1.3.23
 psycopg2-binary
 feedparser
 hachoir
@@ -17,7 +17,7 @@ geopy
 nltk
 psutil
 aiohttp>=2.2.5
-Pillow>=4.2.0
+Pillow>=8.3.2
 CurrencyConverter
 jikanpy
 speedtest-cli
@@ -42,8 +42,8 @@ ujson
 pretty_errors
 TgCrypto
 Pyrogram
-youtube-dl
-youtube_search_python
+youtube-dl==2021.06.06
+youtube_search_python==1.4.6
 youtube_search
 asyncio
 dateparser==1.0.0
