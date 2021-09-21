@@ -110,3 +110,4 @@ nltk
 emoji
 textblob
 googletrans
+google_trans_new
