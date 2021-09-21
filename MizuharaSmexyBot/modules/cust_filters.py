@@ -269,8 +269,8 @@ def stop_filter(update, context):
 
 @run_async
 def reply_filter(update, context):
-    chat = update.effective_chat  # type: Optional[Chat]
-    message = update.effective_message  # type: Optional[Message]
+    chat = update.effective_message
+    message = update.effective_message
 
     if not update.effective_user or update.effective_user.id == 777000:
         return
