@@ -240,7 +240,7 @@ def info(update: Update, context: CallbackContext):
     rep = message.reply_text("<code>Appraising...</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"╒═══「<b> Appraisal results:</b> 」\n"
+        f"╒═══「<b> Appraisal Results:</b> 」\n"
         f"ID: <code>{user.id}</code>\n"
         f"First Name: {html.escape(user.first_name)}"
     )
@@ -421,7 +421,7 @@ def set_about_me(update: Update, context: CallbackContext):
 @run_async
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b>📊 Current stats:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "<b>╒═「 Current Mizuhara Statistics 」:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
 
@@ -528,6 +528,7 @@ When marked as AFK, any mentions will be replied to with a message to say you're
 *Self addded information:* 
  ❍ /setme <text>*:* will set your info
  ❍ /me*:* will get your or another user's info.
+
 *Examples:* 💡
  ➩ /setme I am a wolf.
  ➩ /me @username(defaults to yours if no user specified)
@@ -535,6 +536,7 @@ When marked as AFK, any mentions will be replied to with a message to say you're
 *Information others add on you:* 
  ❍ /bio*:* will get your or another user's bio. This cannot be set by yourself.
  ❍ /setbio <text>*:* while replying, will save another user's bio 
+
 *Examples:* 💡
  ➩ /bio @username(defaults to yours if not specified).`
  ➩ /setbio This user is a wolf` (reply to the user)
