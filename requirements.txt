@@ -76,13 +76,9 @@ bing_image_downloader
 search_engine_parser
 aiohttp>=2.2.5
 alphabet_detector
-beautifulsoup4
-bleach
 cachetools
-CurrencyConverter
 emoji
 feedparser
-future
 geopy
 git+https://github.com/starry69/python-markdown2.git
 humanize
@@ -115,9 +111,3 @@ emoji
 textblob 
 googletrans
 google_trans_new
-redis
-aioredis==1.3.0 # Redis memery storage fom aiogram
-motor
-odmantic # MongoDB ORM
-sqlalchemy==1.3.20 # For old modules
-dnspython # needed to connect to cloud MongoDB instances
