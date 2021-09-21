@@ -40,7 +40,7 @@ def get_user_list(__init__, key):
 
 
 # enable logging
-FORMAT = "[Mizuhara] %(message)s"
+FORMAT = "[MizuharaRobot] %(message)s"
 logging.basicConfig(
     handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
     level=logging.INFO,
