@@ -76,7 +76,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hi I am [Mizuhara](https://telegra.ph/file/3c9d1bad59a0666786887.jpg)
-`An Powerful Anime Themed Group Manager Bot hit ✨Help and Commands✨ TO see what I am capable of by`[@Project_Tsukiyomi](https://t.me/project_tsukiyomi).
+`An Powerful Anime Themed Group Manager Bot hit ✨ Help and Commands ✨ TO see what I am capable of by` [@Project_Tsukiyomi](https://t.me/project_tsukiyomi).
 """
 
 buttons = [
@@ -93,7 +93,7 @@ buttons = [
     [
         InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
         InlineKeyboardButton(
-            text="UPDATES", url=f"https://t.me/smexy_Updates"
+            text="Updates", url=f"https://t.me/smexy_Updates"
         ),
     ],
     [
