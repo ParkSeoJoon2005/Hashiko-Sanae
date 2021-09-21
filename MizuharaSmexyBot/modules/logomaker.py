@@ -1,3 +1,6 @@
+## This module belongs to riz-ex and @KennedyProject
+## Ported by @aryazakaria01
+
 from MizuharaSmexyBot.events import register
 from MizuharaSmexyBot import OWNER_ID
 from MizuharaSmexyBot import telethn as tbot
@@ -15,8 +18,8 @@ from requests import get
 
 
 #Add telegraph media links of profile pics that are to be used
-TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/b3da75d390da29a9c5145.jpg",
-                         "https://telegra.ph/file/ae614f9fd0bbeba0350af.jpg",
+TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
+                         "https://telegra.ph/file/c1ff2d5ec5e1b5bd1b200.jpg",
                          "https://telegra.ph/file/08c5fbe14cc4b13d1de05.jpg",
                          "https://telegra.ph/file/66614a049d74fe2a220dc.jpg",
                          "https://telegra.ph/file/9cc1e4b24bfa13873bd66.jpg",
