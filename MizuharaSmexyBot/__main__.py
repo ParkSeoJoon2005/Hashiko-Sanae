@@ -79,7 +79,7 @@ PM_START_TEXT = """
 
 ➛ I am an Anime themed group management bot ××
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-`Maintained By` @Badboyanim
+`Maintained By` @Pain_to_this_world
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ Find the list of available commands with /help ××
 """
