@@ -367,19 +367,19 @@ def mizuhara_about_callback(update, context):
     query = update.callback_query
     if query.data == "mizuhara_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *Mizuhara Chizuru*, a powerful group management bot built to help you manage your group easily.
-                 \n❍ I can restrict users.
-                 \n❍ I can greet users with customizable welcome messages and even set a group's rules.
-                 \n❍ I have an advanced anti-flood system.
-                 \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n❍ I check for admins' permissions before executing any command and more stuffs
+            text=""" Ohayo Me iz Mizuhara*, a powerful Anime Based  group management bot built to help you manage your group easily.
+                 \n➥ I can restrict users.
+                 \n➥ I can greet users with customizable welcome messages and even set a group's rules.
+                 \n➥ I have an advanced anti-flood system.
+                 \n➥ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
+                 \n➥ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
+                 \n➥ I check for admins' permissions before executing any command and more stuffs
                  \n\n_Mizuhara's licensed under the GNU General Public License v3.0_
-                 \n❍ Mizuhara Projects @Project_Tsukiyomi
-                 \n❍ Support Group @Tsukinomi_Chat
-                 \n❍ Assistant @Pain_to_this_world.
-                 \nHere is the [Owner](https://t.me/Pain_to_this_world).
-                 \n\nIf you have any question about Mizuhara, let us know at .""",
+                 \n➥ My Network  @Project_Tsukiyomi
+                 \n➥ Support Group @Chizuru_Support
+                 \n➥ Special Thanks To @TeamSmexy.
+                 \nHere is the [Anime From Which I'm](https://t.me/joinchat/_kD7MEaySg45MWQ1).
+                 \n\nIf you have any question about Mizuhara, let us know at @Chizuru_Support .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -406,7 +406,7 @@ def Source_about_callback(update, context):
     if query.data == "source_":
         query.message.edit_text(
             text=""" Hi, I'm *Mizuhara Chizuru*
-                 \nHere is the [Author](https://github.com/AnuragSharma080) .""",
+                 \nHere is the [Repository](https://t.me/TeamSmexy) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
