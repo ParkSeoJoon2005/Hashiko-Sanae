@@ -108,7 +108,5 @@ cowpy
 fontTools
 nltk
 emoji
-textblob 
+textblob
 googletrans
-google_trans_new
-effective_chat
