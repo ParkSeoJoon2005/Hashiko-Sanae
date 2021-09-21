@@ -87,11 +87,17 @@ buttons = [
     [
         InlineKeyboardButton(text="About Me", callback_data="mizuhara_"),
         InlineKeyboardButton(
-            text="Support Group", url=f"https://t.me/{SUPPORT_CHAT}"
+            text="Thanks To", url=f"https://t.me/TeamSmexy"
         ),
     ],
     [
-        InlineKeyboardButton(text="Help & Command❓", callback_data="help_back"),
+        InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(
+            text="UPDATES", url=f"https://t.me/smexy_Updates"
+        ),
+    ],
+    [
+        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ❔", callback_data="help_back"),
     ],
 ]
 
