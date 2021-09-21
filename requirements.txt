@@ -109,3 +109,4 @@ emoji
 textblob
 googletrans
 google_trans_new
+Python_ARQ
