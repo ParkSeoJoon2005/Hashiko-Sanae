@@ -95,7 +95,6 @@ regex
 requests
 speedtest-cli
 spongemock
-sqlalchemy==1.3.20
 ujson
 wikipedia
 zalgo-text
