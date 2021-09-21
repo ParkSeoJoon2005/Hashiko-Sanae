@@ -11,6 +11,7 @@ from MizuharaSmexyBot import (
     LOGGER,
     OWNER_ID,
     PORT,
+    SUPPORT_CHAT,
     TOKEN,
     URL,
     WEBHOOK,
@@ -18,13 +19,15 @@ from MizuharaSmexyBot import (
     dispatcher,
     StartTime,
     telethn,
+    pbot,
     updater,
-    pbot) 
+)
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
 from MizuharaSmexyBot.modules import ALL_MODULES
 from MizuharaSmexyBot.modules.helper_funcs.chat_status import is_user_admin
+import MizuharaSmexyBot.modules.sql.users_sql as sql
 from MizuharaSmexyBot.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
@@ -70,42 +73,48 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-PM_START_TEXT= """ Hi I am [Mizuhara](https://telegra.ph/file/3c9d1bad59a0666786887.jpg)
-`An Powerful Anime Themed Group Manager Bot hit ✨Help and Commands✨ TO see what I am capable of by`[@Project_Tsukiyomi](https://t.me/project_tsukiyomi).
+
+PM_START_TEXT = """
+✦ Hi, My name is Mizuhara Chizuru[.](https://telegra.ph/file/3c9d1bad59a0666786887.jpg)
+
+➛ I am an Anime themed group management bot ××
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+`Maintained By` @Badboyanim
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+➛ Find the list of available commands with /help ××
 """
+
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/MizuharaSmexyBot?startgroup=true"),
+            text="➕️ Add To Your Group ➕️", url="t.me/MizuharaSmexyBot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="mizuharasmexybot_"),
+        InlineKeyboardButton(text="About Me", callback_data="mizuhara_"),
         InlineKeyboardButton(
-            text="Thanks To", url=f"https://t.me/TeamSmexy"
+            text="Support Group", url=f"https://t.me/{SUPPORT_CHAT}"
         ),
     ],
     [
-        InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
-        InlineKeyboardButton(
-            text="UPDATES", url=f"https://t.me/smexy_Updates"
-        ),
-    ],
-    [
-        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ❔", callback_data="help_back"),
+        InlineKeyboardButton(text="Help & Command❓", callback_data="help_back"),
     ],
 ]
 
-
 HELP_STRINGS = """
-`Ohayo.. I'M` [Mizuhara](https://telegra.ph/file/1ea3d75011561072637b2.jpg)
-`ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`
-Powered by :- [Project Tsukiyomi](t.me/Project_tsukiyomi) [.](https://telegra.ph/file/1ea3d75011561072637b2.jpg)"""
-Mizuhara_IMG = "https://telegra.ph/file/75c2e5861318509b9c1aa.jpg"
+*Main commands available*[:](https://telegra.ph/file/1ea3d75011561072637b2.jpg)
+➛ /help: PM's you this message.
+➛ /help <module name>: PM's you info about that module.
+➛ /settings:
+  ❂ in PM: will send you your settings for all supported modules.
+  ❂ in a group: will redirect you to PM, with all that chat's settings.
+"""
+
+MIZUHARA_IMG = "https://telegra.ph/file/75c2e5861318509b9c1aa.jpg"
 
 DONATE_STRING = """Arigato , glad to hear you want to donate!
- You can support the project [Tsukiyomi](t.me/Project_Tsukiyomi) \
- Supporting isnt always financial! [Akatsuki](t.me/Tsukinomi_Chat) \
- Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+ You can support the project [Tsukiyomi](t.me/Project_Tsukiyomi)
+ Supporting isnt always financial! [Akatsuki](t.me/Tsukinomi_Chat)
+ Those who cannot provide monetary support are welcome to help us develop the bot at"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -116,6 +125,7 @@ DATA_IMPORT = []
 DATA_EXPORT = []
 CHAT_SETTINGS = {}
 USER_SETTINGS = {}
+
 
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module("MizuharaSmexyBot.modules." + module_name)
@@ -190,7 +200,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="help_back")]]
                     ),
                 )
 
@@ -207,19 +217,25 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
+            first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-                PM_START_TEXT,
+                    PM_START_TEXT.format(
+                    escape_markdown(first_name),
+                    escape_markdown(uptime),
+                    sql.num_users(),
+                    sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
             )
     else:
-        update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+        update.effective_message.reply_photo(
+            MIZUHARA_IMG,
+            caption="I'm awake already sir!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
-        )
+            )
 
 
 def error_handler(update, context):
@@ -346,22 +362,22 @@ def help_button(update, context):
 
 
 @run_async
-def layla_about_callback(update, context):
+def mizuhara_about_callback(update, context):
     query = update.callback_query
-    if query.data == "mizuharasmexybot_":
+    if query.data == "mizuhara_":
         query.message.edit_text(
-            text=""" Ohayo Me iz Mizuhara*, a powerful Anime Based  group management bot built to help you manage your group easily.
-                 \n➥ I can restrict users.
-                 \n➥ I can greet users with customizable welcome messages and even set a group's rules.
-                 \n➥ I have an advanced anti-flood system.
-                 \n➥ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n➥ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n➥ I check for admins' permissions before executing any command and more stuffs
+            text=""" ℹ️ I'm *Mizuhara Chizuru*, a powerful group management bot built to help you manage your group easily.
+                 \n❍ I can restrict users.
+                 \n❍ I can greet users with customizable welcome messages and even set a group's rules.
+                 \n❍ I have an advanced anti-flood system.
+                 \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
+                 \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
+                 \n❍ I check for admins' permissions before executing any command and more stuffs
                  \n\n_Mizuhara's licensed under the GNU General Public License v3.0_
-                 \n➥ My Network  @Project_Tsukiyomi
-                 \n➥ Support Group @Chizuru_Support
-                 \n➥ Special Thanks To @TeamSmexy.
-                 \nHere is the [Anime From Which I'm](https://t.me/joinchat/_kD7MEaySg45MWQ1).
+                 \n❍ Mizuhara Projects @Project_Tsukiyomi
+                 \n❍ Support Group @Tsukinomi_Chat
+                 \n❍ Assistant @Pain_to_this_world.
+                 \nHere is the [Owner](https://t.me/Pain_to_this_world).
                  \n\nIf you have any question about Mizuhara, let us know at .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -388,8 +404,8 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Ohayo...💜 Mizuhara Here! 
-                 \nHere is the [Source Code](https://youtu.be/dQw4w9WgXcQ) .""",
+            text=""" Hi, I'm *Mizuhara Chizuru*
+                 \nHere is the [Author](https://github.com/AnuragSharma080) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -435,7 +451,7 @@ def get_help(update: Update, context: CallbackContext):
             )
             return
         update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
+            "Contact Me In PM To Get The List Of Possible Commands.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -653,11 +669,11 @@ def donate(update: Update, context: CallbackContext):
             )
 
             update.effective_message.reply_text(
-                "I've PM'ed you about donating to my creator!"
+                "I've PM'ed you about my creator!"
             )
         except Unauthorized:
             update.effective_message.reply_text(
-                "Contact me in PM first to get donation information."
+                "Contact me in PM first to get information."
             )
 
 
@@ -672,11 +688,11 @@ def migrate_chats(update: Update, context: CallbackContext):
     else:
         return
 
-    LOGGER.info("Migrating from %s, to %s", str(old_chat), str(new_chat))
+    LOGGER.info("Mizuhara is started migrating from %s, to %s", str(old_chat), str(new_chat))
     for mod in MIGRATEABLE:
         mod.__migrate__(old_chat, new_chat)
 
-    LOGGER.info("Successfully migrated!")
+    LOGGER.info("Mizuhara Successfully migrated!")
     raise DispatcherHandlerStop
 
 
@@ -684,7 +700,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive and working fine asf 😌")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm online now!")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
@@ -701,7 +717,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(layla_about_callback, pattern=r"mizuhara_")
+    about_callback_handler = CallbackQueryHandler(mizuhara_about_callback, pattern=r"mizuhara_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
@@ -721,8 +737,8 @@ def main():
     dispatcher.add_error_handler(error_callback)
 
     if WEBHOOK:
-        LOGGER.info("Using webhooks.")
-        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
+        LOGGER.info("Mizuhara started, Using webhook.")
+        updater.start_webhook(listen="127.0.0.1", port=PORT, url_path=TOKEN)
 
         if CERT_PATH:
             updater.bot.set_webhook(url=URL + TOKEN, certificate=open(CERT_PATH, "rb"))
@@ -730,7 +746,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Using long polling.")
+        LOGGER.info("Mizuhara started, Using long polling.")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
@@ -742,7 +758,7 @@ def main():
 
 
 if __name__ == "__main__":
-    LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
+    LOGGER.info("Mizuhara Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     pbot.start()
     main()
