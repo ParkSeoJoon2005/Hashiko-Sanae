@@ -2,7 +2,7 @@ import os
 from json import JSONDecodeError
 import requests
 from pyrogram import filters
-from MizuharaSmexyBot.more.pluginhelpers import admins_only, edit_or_reply, fetch_audio
+from MizuharaSmexyBot.functions.pluginhelpers import admins_only, edit_or_reply, fetch_audio
 from MizuharaSmexyBot.pyrogramee.pyrogram import pbot
 
 
