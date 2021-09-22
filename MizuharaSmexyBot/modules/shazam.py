@@ -2,8 +2,8 @@ import os
 from json import JSONDecodeError
 import requests
 from pyrogram import filters
-from JisooX.more.pluginhelpers import admins_only, edit_or_reply, fetch_audio
-from JisooX.pyrogramee.pyrogram import pbot
+from MizuharaSmexyBot.more.pluginhelpers import admins_only, edit_or_reply, fetch_audio
+from MizuharaSmexyBot.pyrogramee.pyrogram import pbot
 
 
 @pbot.on_message(filters.command(["identify", "shazam"]))
@@ -13,12 +13,12 @@ async def shazamm(client, message):
     if not message.reply_to_message:
         await kek.edit("Reply To The Audio.")
         return
-    if os.path.exists("friday.mp3"):
-        os.remove("friday.mp3")
+    if os.path.exists("mizuhar.mp3"):
+        os.remove("mizuhara.mp3")
     kkk = await fetch_audio(client, message)
     downloaded_file_name = kkk
     f = {"file": (downloaded_file_name, open(downloaded_file_name, "rb"))}
-    await kek.edit("**Searching For This Song In Friday's DataBase.**")
+    await kek.edit("**Searching For This Song In Mizuhara's DataBase.**")
     r = requests.post("https://starkapi.herokuapp.com/shazam/", files=f)
     try:
         xo = r.json()
@@ -42,7 +42,7 @@ async def shazamm(client, message):
     messageo = f"""<b>Song Shazamed.</b>
 <b>Song Name : </b>{title}
 <b>Song By : </b>{by}
-<u><b>Identified By @JisooXRobot
+<u><b>Identified By @MizuharaSmexyBot
 """
     await client.send_photo(message.chat.id, image, messageo, parse_mode="HTML")
     os.remove(downloaded_file_name)
@@ -51,7 +51,7 @@ async def shazamm(client, message):
 
 __mod_name__ = "Shazam"
 __help__ = """
-*SHAZAMMER*:
+*Shazam*:
 Find any song with it's music or part of song
  - /shazam : identify the song from Friday's Database
 """
