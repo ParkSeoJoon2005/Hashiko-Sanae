@@ -230,12 +230,12 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.
-            caption="Hm?".format(
+        update.effective_message.reply_text(
+            "Hmm?".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
-            )
+        )
 
 
 def error_handler(update, context):
