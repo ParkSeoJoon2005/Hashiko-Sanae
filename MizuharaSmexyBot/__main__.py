@@ -230,9 +230,8 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_photo(
-            MIZUHARA_IMG,
-            caption="I'm awake already sir!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+        update.effective_message.
+            caption="Hm?".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -406,7 +405,7 @@ def Source_about_callback(update, context):
     if query.data == "source_":
         query.message.edit_text(
             text=""" Hi, I'm *Mizuhara Chizuru*
-                 \nHere is the [Repository](https://t.me/TeamSmexy) .""",
+                 \nHere is the [My Devs](https://t.me/TeamSmexy) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -701,7 +700,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm online now!")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Ohayo! I am Working fine af")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
