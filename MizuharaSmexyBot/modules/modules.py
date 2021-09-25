@@ -1,31 +1,30 @@
-import collections
 import importlib
-
-from telegram import ParseMode, Update
-from telegram.ext import CallbackContext, CommandHandler, run_async
 
 from MizuharaSmexyBot import dispatcher, telethn
 from MizuharaSmexyBot.__main__ import (
-    CHAT_SETTINGS,
-    DATA_EXPORT,
-    DATA_IMPORT,
+    IMPORTED, 
     HELPABLE,
-    IMPORTED,
     MIGRATEABLE,
-    STATS,
-    USER_INFO,
+    STATS, 
+    USER_INFO, 
+    DATA_IMPORT,
+    DATA_EXPORT, 
+    CHAT_SETTINGS,
     USER_SETTINGS,
 )
-from MizuharaSmexyBot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from MizuharaSmexyBot.modules.helper_funcs.chat_status import sudo_plus, dev_plus
+from telegram import Bot, Update, ParseMode
+from telegram.ext import CommandHandler, run_async
 
 
 @run_async
 @dev_plus
-def load(update: Update, context: CallbackContext):
+def load(bot: Bot, update: Update):
     message = update.effective_message
     text = message.text.split(" ", 1)[1]
     load_messasge = message.reply_text(
-        f"Attempting to load module : <b>{text}</b>", parse_mode=ParseMode.HTML
+        f"Attempting to load module : <b>{text}</b>",
+        parse_mode=ParseMode.HTML,
     )
 
     try:
@@ -47,13 +46,12 @@ def load(update: Update, context: CallbackContext):
         for handler in handlers:
             if not isinstance(handler, tuple):
                 dispatcher.add_handler(handler)
+            elif isinstance(handler[0], collections.Callable):
+                callback, telethon_event = handler
+                telethn.add_event_handler(callback, telethon_event)
             else:
-                if isinstance(handler[0], collections.Callable):
-                    callback, telethon_event = handler
-                    telethn.add_event_handler(callback, telethon_event)
-                else:
-                    handler_name, priority = handler
-                    dispatcher.add_handler(handler_name, priority)
+                handler_name, priority = handler
+                dispatcher.add_handler(handler_name, priority)
     else:
         IMPORTED.pop(imported_module.__mod_name__.lower())
         load_messasge.edit_text("The module cannot be loaded.")
@@ -85,17 +83,18 @@ def load(update: Update, context: CallbackContext):
         USER_SETTINGS[imported_module.__mod_name__.lower()] = imported_module
 
     load_messasge.edit_text(
-        "Successfully loaded module : <b>{}</b>".format(text), parse_mode=ParseMode.HTML
+        "Successfully loaded module : <b>{}</b>".format(text),
+        parse_mode=ParseMode.HTML,
     )
-
 
 @run_async
 @dev_plus
-def unload(update: Update, context: CallbackContext):
+def unload(bot: Bot, update: Update):
     message = update.effective_message
     text = message.text.split(" ", 1)[1]
     unload_messasge = message.reply_text(
-        f"Attempting to unload module : <b>{text}</b>", parse_mode=ParseMode.HTML
+        f"Attempting to unload module : <b>{text}</b>",
+        parse_mode=ParseMode.HTML,
     )
 
     try:
@@ -117,15 +116,14 @@ def unload(update: Update, context: CallbackContext):
             if isinstance(handler, bool):
                 unload_messasge.edit_text("This module can't be unloaded!")
                 return
-            elif not isinstance(handler, tuple):
+            if not isinstance(handler, tuple):
                 dispatcher.remove_handler(handler)
+            elif isinstance(handler[0], collections.Callable):
+                callback, telethon_event = handler
+                telethn.remove_event_handler(callback, telethon_event)
             else:
-                if isinstance(handler[0], collections.Callable):
-                    callback, telethon_event = handler
-                    telethn.remove_event_handler(callback, telethon_event)
-                else:
-                    handler_name, priority = handler
-                    dispatcher.remove_handler(handler_name, priority)
+                handler_name, priority = handler
+                dispatcher.remove_handler(handler_name, priority)
     else:
         unload_messasge.edit_text("The module cannot be unloaded.")
         return
@@ -156,13 +154,13 @@ def unload(update: Update, context: CallbackContext):
         USER_SETTINGS.pop(imported_module.__mod_name__.lower())
 
     unload_messasge.edit_text(
-        f"Successfully unloaded module : <b>{text}</b>", parse_mode=ParseMode.HTML
+        f"Successfully unloaded module : <b>{text}</b>",
+        parse_mode=ParseMode.HTML,
     )
-
 
 @run_async
 @sudo_plus
-def listmodules(update: Update, context: CallbackContext):
+def listmodules(bot: Bot, update: Update):
     message = update.effective_message
     module_list = []
 
@@ -171,8 +169,8 @@ def listmodules(update: Update, context: CallbackContext):
         file_info = IMPORTED[helpable_module_info.__mod_name__.lower()]
         file_name = file_info.__name__.rsplit("MizuharaSmexyBot.modules.", 1)[1]
         mod_name = file_info.__mod_name__
-        module_list.append(f"- <code>{mod_name} ({file_name})</code>\n")
-    module_list = "Following modules are loaded : \n\n" + "".join(module_list)
+        module_list.append(f'- <code>{mod_name} ({file_name})</code>\n')
+    module_list = "Following modules are loaded : \n\n" + ''.join(module_list)
     message.reply_text(module_list, parse_mode=ParseMode.HTML)
 
 
