@@ -8,7 +8,7 @@ from MizuharaSmexyBot import telethn as tbot
 
 Pain = "Mizuhara"
 telegraph = Telegraph()
-r = telegraph.create_account(short_name=Coli)
+r = telegraph.create_account(short_name=Pain)
 auth_url = r["auth_url"]
 TMP_DOWNLOAD_DIRECTORY = "./"
 
