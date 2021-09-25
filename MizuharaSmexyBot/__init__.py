@@ -3,33 +3,10 @@ import os
 import sys
 import time
 import spamwatch
-from aiohttp import ClientSession
-from Python_ARQ import ARQ
 
 import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
-
-
-import logging
-import os
-import sys
-import json
-import asyncio
-import time
-import spamwatch
-import telegram.ext as tg
-from aiohttp import ClientSession
-from Python_ARQ import ARQ
-from pymongo import MongoClient
-from odmantic import AIOEngine
-from motor import motor_asyncio
-from telethon import TelegramClient
-from telethon.sessions import MemorySession
-from pyrogram import Client, errors
-from pymongo.errors import ServerSelectionTimeoutError
-from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid, ChannelInvalid
-from pyrogram.types import Chat, User
 
 StartTime = time.time()
 
@@ -40,7 +17,7 @@ def get_user_list(__init__, key):
 
 
 # enable logging
-FORMAT = "[MizuharaRobot] %(message)s"
+FORMAT = "[Mizuhara] %(message)s"
 logging.basicConfig(
     handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
     level=logging.INFO,
@@ -63,7 +40,6 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 
-    
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     LOGGER.error(
@@ -114,7 +90,6 @@ if ENV:
     API_ID = os.environ.get("API_ID", None)
     API_HASH = os.environ.get("API_HASH", None)
     BOT_ID = int(os.environ.get("BOT_ID", None))
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
     DB_URI = os.environ.get("DATABASE_URL")
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     DONATION_LINK = os.environ.get("DONATION_LINK")
@@ -137,10 +112,8 @@ if ENV:
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-    ARQ_API_URL = os.environ.get("ARQ_API_URL", None)
-    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
+
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
-    LASTFM_API_KEY = os.environ.get("LASTFM_API_KEY", None)
 
     try:
         BL_CHATS = {int(x) for x in os.environ.get("BL_CHATS", "").split()}
@@ -188,6 +161,7 @@ else:
     CERT_PATH = Config.CERT_PATH
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
+
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     MONGO_DB_URI = Config.MONGO_DB_URI
     HEROKU_API_KEY = Config.HEROKU_API_KEY
@@ -195,7 +169,6 @@ else:
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
     OPENWEATHERMAP_ID = Config.OPENWEATHERMAP_ID
     BOT_ID = Config.BOT_ID
-    BOT_USERNAME = Config.BOT_USERNAME
     VIRUS_API_KEY = Config.VIRUS_API_KEY
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
@@ -213,6 +186,7 @@ else:
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
+    REDIS_URL = Config.REDIS_URL
     
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
@@ -221,8 +195,8 @@ else:
 
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1332331113)
-
+DEV_USERS.add(1200780834)
+DEV_USERS.add(797768146)
 
 if not SPAMWATCH_API:
     sw = None
@@ -239,19 +213,6 @@ updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Mizuhara", API_ID, API_HASH)
 pbot = Client("Mizuharapbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
-
-# Aiohttp Client
-print("[Mizuhara]: INITIALZING AIOHTTP SESSION")
-aiohttpsession = ClientSession()
-# ARQ Client
-print("[Mizuhara]: INITIALIZING ARQ CLIENT")
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-# Bot client
-print("[Mizuhara]: INITIALIZING BOT CLIENT")
-app = Client(
-    "MizuharaSmexyBot", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH
-)
-
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
