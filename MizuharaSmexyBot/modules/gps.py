@@ -1,8 +1,10 @@
-from geopy.geocoders import Nominatim
-from telethon import *
-
+import os
 from MizuharaSmexyBot import telethn as tbot
+from geopy.geocoders import Nominatim
 from MizuharaSmexyBot.events import register
+from MizuharaSmexyBot import *
+from telethon import *
+from telethon.tl import *
 
 GMAPS_LOC = "https://maps.googleapis.com/maps/api/geocode/json"
 
@@ -31,4 +33,3 @@ async def _(event):
     except Exception as e:
         print(e)
         await event.reply("I can't find that")
-
