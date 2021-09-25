@@ -69,7 +69,8 @@ better_profanity
 nudepy
 motor
 cloudscraper
-autohttp>=2.2.5
 glitch_this
 NumPy
 opencv-python-headless
+aiohttp
+aiofiles
