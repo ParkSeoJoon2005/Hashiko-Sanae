@@ -1,15 +1,16 @@
-from MizuharaSmexyBot import telethn as tbot
-from MizuharaSmexyBot.events import register
-
-TMP_DOWNLOAD_DIRECTORY = "./"
 import os
+from telethon import events
 from PIL import Image
 from datetime import datetime
 from telegraph import Telegraph, upload_file, exceptions
+from MizuharaSmexyBot.events import register
+from MizuharaSmexyBot import telethn as tbot
+
 Pain = "Mizuhara"
 telegraph = Telegraph()
-r = telegraph.create_account(short_name=Pain)
+r = telegraph.create_account(short_name=Coli)
 auth_url = r["auth_url"]
+TMP_DOWNLOAD_DIRECTORY = "./"
 
 
 @register(pattern="^/t(m|xt) ?(.*)")
@@ -41,7 +42,7 @@ async def _(event):
                 end = datetime.now()
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
-                await h.edit("Uploaded to https://telegra.ph{})".format(media_urls[0]), link_preview=True)
+                await h.edit("[Uploaded to Telegra.ph](https://telegra.ph{})".format(media_urls[0]), link_preview=False)
         elif input_str == "xt":
             user_object = await tbot.get_entity(r_message.sender_id)
             title_of_page = user_object.first_name # + " " + user_object.last_name
@@ -81,8 +82,8 @@ def resize_image(image):
 
 __help__ = """
 I can upload files to Telegraph
- ➥ /tm :Get Telegraph Link Of Replied Media
- ➥ /txt :Get Telegraph Link of Replied Text
+ ❍ /tm :Get Telegraph Link Of Replied Media
+ ❍ /txt :Get Telegraph Link of Replied Text
 """
 
 __mod_name__ = "Telegraph"
