@@ -73,4 +73,3 @@ autohttp>=2.2.5
 glitch_this
 NumPy
 opencv-python-headless
-Pillow
