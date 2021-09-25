@@ -5,9 +5,9 @@ import asyncio
 import os
 import time
 from datetime import datetime
-from LaylaRobot import OWNER_ID, DEV_USERS
-from LaylaRobot import TEMP_DOWNLOAD_DIRECTORY as path
-from LaylaRobot import TEMP_DOWNLOAD_DIRECTORY
+from MizuharaSmexyBot import OWNER_ID, DEV_USERS
+from MizuharaSmexyBot import TEMP_DOWNLOAD_DIRECTORY as path
+from MizuharaSmexyBot import TEMP_DOWNLOAD_DIRECTORY
 from datetime import datetime
 water = 'MizuharaSmexyBot/resources/20210816_185444.jpg'
 client = tbot
