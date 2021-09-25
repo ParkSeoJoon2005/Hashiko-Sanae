@@ -2,7 +2,6 @@
 
 import logging
 import time
-
 from pyrogram import filters
 from pyrogram.errors.exceptions.bad_request_400 import (
     ChatAdminRequired,
@@ -10,10 +9,12 @@ from pyrogram.errors.exceptions.bad_request_400 import (
     UsernameNotOccupied,
     UserNotParticipant,
 )
-from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
-
-from MizuharaSmexyBot import DRAGONS as SUDO_USERS
-from MizuharaSmexyBot import pbot
+from pyrogram.types import (
+    ChatPermissions,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+)
+from MizuharaSmexyBot import DRAGONS as SUDO_USERS, pbot
 from MizuharaSmexyBot.modules.sql_extended import forceSubscribe_sql as sql
 
 logging.basicConfig(level=logging.INFO)
@@ -111,7 +112,7 @@ def _check_member(client, message):
                     )
                 except ChatAdminRequired:
                     sent_message.edit(
-                        "❗ **Daisy is not admin here..**\n__Give me ban permissions and retry.. \n#Ending FSub...__"
+                        "❗ **Mizuhara is not admin here..**\n__Give me ban permissions and retry.. \n#Ending FSub...__"
                     )
 
             except ChatAdminRequired:
@@ -181,19 +182,20 @@ def config(client, message):
 
 __help__ = """
 *Force Subscribe:*
-➥ Mizuhara can mute members who are not subscribed your channel until they subscribe
-➥ When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
+❍ Mizuhara can mute members who are not subscribed your channel until they subscribe
+❍ When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
+
 *Setup*
 *Only creator*
-➥ Add me in your group as admin
-➥ Add me in your channel as admin 
+❍ Add me in your group as admin
+❍ Add me in your channel as admin 
  
 *Commmands*
- ➥ /fsub {channel username} - To turn on and setup the channel.
+❍ /fsub {channel username} - To turn on and setup the channel.
   💡Do this first...
- ➥ /fsub - To get the current settings.
- ➥ /fsub disable - To turn of ForceSubscribe..
+❍ /fsub - To get the current settings.
+❍ /fsub disable - To turn of ForceSubscribe..
   💡If you disable fsub, you need to set again for working.. /fsub {channel username} 
- ➥ /fsub clear - To unmute all members who muted by me.
+❍ /fsub clear - To unmute all members who muted by me.
 """
-__mod_name__ = "Force-Subscribe"
+__mod_name__ = "Force Subscribe"
