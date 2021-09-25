@@ -1,11 +1,14 @@
 import asyncio
 import math
 import os
-
 import heroku3
 import requests
-
-from MizuharaSmexyBot import HEROKU_APP_NAME, HEROKU_API_KEY, OWNER_ID
+from MizuharaSmexyBot import (
+    telethn as borg,
+    HEROKU_APP_NAME,
+    HEROKU_API_KEY,
+    OWNER_ID,
+)
 from MizuharaSmexyBot.events import register
 
 heroku_api = "https://api.heroku.com"
@@ -112,7 +115,7 @@ async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
     """
-    die = await dyno.reply("**Processing...**")
+    die = await dyno.reply("`Processing...`")
     useragent = (
         "Mozilla/5.0 (Linux; Android 10; SM-G975F) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -157,12 +160,12 @@ async def dyno_usage(dyno):
     await asyncio.sleep(1.5)
 
     return await die.edit(
-        "**Dyno Usage**:\n\n"
-        f" -> `Dyno usage for`  **{HEROKU_APP_NAME}**:\n"
+        "**📊 Dyno Usage**:\n\n"
+        f" » `Dyno usage for`  **{HEROKU_APP_NAME}**:\n"
         f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
         f"**|**  [`{AppPercentage}`**%**]"
         "\n\n"
-        " -> `Dyno hours quota remaining this month`:\n"
+        " » `Dyno hours quota remaining this month`:\n"
         f"     •  `{hours}`**h**  `{minutes}`**m**  "
         f"**|**  [`{percentage}`**%**]"
     )
@@ -183,15 +186,15 @@ async def _(dyno):
         return await dyno.reply(
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku"
         )
-    v = await dyno.reply("Getting Logs....")
+    v = await dyno.reply("`Getting Logs...`")
     with open("logs.txt", "w") as log:
         log.write(app.get_log())
-    await v.edit("Got the logs wait a sec")
+    await v.edit("`Got the logs wait a sec`")
     await dyno.client.send_file(
         dyno.chat_id,
         "logs.txt",
         reply_to=dyno.id,
-        caption="Mizuhara Bot Logz.",
+        caption="@Mizuhara_Ro_Bot logs.",
     )
 
     await asyncio.sleep(5)
