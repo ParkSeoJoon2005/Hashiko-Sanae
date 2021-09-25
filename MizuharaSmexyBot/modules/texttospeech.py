@@ -1,11 +1,16 @@
-from MizuharaSmexyBot import *
 from MizuharaSmexyBot import telethn as tbot
-from MizuharaSmexyBot.events import register
+import os
+
 from gtts import gTTS
 from gtts import gTTSError
+from telethon import *
 from telethon.tl import functions
 from telethon.tl import types
 from telethon.tl.types import *
+
+from MizuharaSmexyBot import *
+
+from MizuharaSmexyBot.events import register
 
 
 async def is_register_admin(chat, user):
@@ -26,7 +31,7 @@ async def _(event):
         return
     if event.is_group:
      if not (await is_register_admin(event.input_chat, event.message.sender_id)):
-       await event.reply("🚨 Need Admin Pewer.. You can't use this command.. But you can use in my pm")
+       await event.reply("🚨 Need Admin Power.. You can't use this command.. But you can use in my PM")
        return
 
     input_str = event.pattern_match.group(1)
@@ -46,7 +51,7 @@ async def _(event):
     lan = lan.strip()
     try:
         tts = gTTS(text, tld="com", lang=lan)
-        tts.save("k.mp3")
+        tts.save("tts @Mizuhara_Ro_Bot.mp3")
     except AssertionError:
         await event.reply(
             "The text is empty.\n"
@@ -63,8 +68,8 @@ async def _(event):
     except gTTSError:
         await event.reply("Error in Google Text-to-Speech API request !")
         return
-    with open("k.mp3", "r"):
+    with open("tts @Mizuhara_Ro_Bot.mp3", "r"):
         await tbot.send_file(
-            event.chat_id, "k.mp3", voice_note=True, reply_to=reply_to_id
+            event.chat_id, "tts @Mizuhara_Ro_Bot.mp3", voice_note=True, reply_to=reply_to_id
         )
-        os.remove("k.mp3")
+        os.remove("tts @Mizuhara_Ro_Bot.mp3")
