@@ -1,5 +1,5 @@
-from LaylaRobot import telethn as tbot
-from LaylaRobot.events import register
+from MizuharaSmexyBot import telethn as tbot
+from MizuharaSmexyBot.events import register
 import os
 import asyncio
 import os
