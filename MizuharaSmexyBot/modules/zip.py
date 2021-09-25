@@ -1,13 +1,10 @@
 import os
 import time
 import zipfile
-
 from telethon import types
 from telethon.tl import functions
-
-from MizuharaSmexyBot import TEMP_DOWNLOAD_DIRECTORY
-from MizuharaSmexyBot import telethn as client
-from MizuharaSmexyBot .events import register
+from MizuharaSmexyBot import telethn as client, TEMP_DOWNLOAD_DIRECTORY
+from MizuharaSmexyBot.events import register
 
 
 async def is_register_admin(chat, user):
@@ -149,7 +146,7 @@ async def _(event):
         with zipfile.ZipFile(downloaded_file_name, "r") as zip_ref:
             zip_ref.extractall(extracted)
         filename = sorted(get_lst_of_files(extracted, []))
-        await event.reply("Unzipping now 😌")
+        await event.reply("Unzipping now")
         for single_file in filename:
             if os.path.exists(single_file):
                 caption_rts = os.path.basename(single_file)
@@ -208,10 +205,8 @@ def get_lst_of_files(input_directory, output_lst):
         output_lst.append(current_file_name)
     return output_lst
 
-__help__ = """
-Hey I can convert files here..
- ➥ /zip*:* reply to a telegram file to compress it in .zip format
- ➥ /unzip*:* reply to a telegram file to decompress it from the .zip format
-"""
-
 __mod_name__ = "Zipper"
+__help__ = """
+ - /zip: reply to a telegram file to compress it in .zip format
+ - /unzip: reply to a telegram file to decompress it from the .zip format
+"""
