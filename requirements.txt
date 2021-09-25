@@ -72,5 +72,4 @@ cloudscraper
 glitch_this
 NumPy
 opencv-python-headless
-aiohttp
 aiofiles
