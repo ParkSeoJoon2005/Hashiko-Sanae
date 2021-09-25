@@ -1,6 +1,6 @@
 import logging
 from pyrogram import Client
-from JisooX.conf import get_int_key, get_str_key
+from MizuharaSmexyBot.conf import get_int_key, get_str_key
 
 TOKEN = get_str_key("TOKEN", required=True)
 APP_ID = get_int_key("APP_ID", required=True)
