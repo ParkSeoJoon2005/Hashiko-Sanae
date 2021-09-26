@@ -10,26 +10,9 @@ from telethon import TelegramClient
 
 StartTime = time.time()
 
-
 def get_user_list(__init__, key):
     with open("{}/MizuharaSmexyBot/{}".format(os.getcwd(), __init__), "r") as json_file:
         return json.load(json_file)[key]
-
-
-# enable logging
-FORMAT = "[Mizuhara] %(message)s"
-logging.basicConfig(
-    handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
-    level=logging.INFO,
-    format=FORMAT,
-    datefmt="[%X]",
-)
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
-LOGGER = logging.getLogger(__name__)
-LOGGER.info("Mizuhara is starting. | An AnuragSharma Union Project. | Licensed under GPLv3.")
-LOGGER.info("Not affiliated to Shie Hashaikai or Villain in any way whatsoever.")
-LOGGER.info("Project maintained by: github.com/AnuragSharma080 (t.me/Pain_to_this_world)")
 
 # enable logging
 logging.basicConfig(
@@ -45,7 +28,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     LOGGER.error(
         "You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting."
     )
-    sys.exit(1)
+    quit(1)
 
 ENV = bool(os.environ.get("ENV", False))
 
@@ -61,23 +44,23 @@ if ENV:
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
-        DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "").split()}
-        DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "").split()}
+        DRAGONS = set(int(x) for x in os.environ.get("DRAGONS", "").split())
+        DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "").split())
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        DEMONS = {int(x) for x in os.environ.get("DEMONS", "").split()}
+        DEMONS = set(int(x) for x in os.environ.get("DEMONS", "").split())
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        WOLVES = {int(x) for x in os.environ.get("WOLVES", "").split()}
+        WOLVES = set(int(x) for x in os.environ.get("WOLVES", "").split())
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     try:
-        TIGERS = {int(x) for x in os.environ.get("TIGERS", "").split()}
+        TIGERS = set(int(x) for x in os.environ.get("TIGERS", "").split())
     except ValueError:
         raise Exception("Your tiger users list does not contain valid integers.")
 
@@ -116,12 +99,12 @@ if ENV:
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
     try:
-        BL_CHATS = {int(x) for x in os.environ.get("BL_CHATS", "").split()}
+        BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
     except ValueError:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from MizuharaSmexyBot.config import Development as Config
+    from LaylaRobot.config import Development as Config
 
     TOKEN = Config.TOKEN
 
@@ -134,23 +117,23 @@ else:
     OWNER_USERNAME = Config.OWNER_USERNAME
     ALLOW_CHATS = Config.ALLOW_CHATS
     try:
-        DRAGONS = {int(x) for x in Config.DRAGONS or []}
-        DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
+        DRAGONS = set(int(x) for x in Config.DRAGONS or [])
+        DEV_USERS = set(int(x) for x in Config.DEV_USERS or [])
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        DEMONS = {int(x) for x in Config.DEMONS or []}
+        DEMONS = set(int(x) for x in Config.DEMONS or [])
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        WOLVES = {int(x) for x in Config.WOLVES or []}
+        WOLVES = set(int(x) for x in Config.WOLVES or [])
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     try:
-        TIGERS = {int(x) for x in Config.TIGERS or []}
+        TIGERS = set(int(x) for x in Config.TIGERS or [])
     except ValueError:
         raise Exception("Your tiger users list does not contain valid integers.")
 
@@ -189,13 +172,13 @@ else:
     REDIS_URL = Config.REDIS_URL
     
     try:
-        BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
+        BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
     except ValueError:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1200780834)
+DEV_USERS.add(1461968113)
 DEV_USERS.add(797768146)
 
 if not SPAMWATCH_API:
@@ -221,7 +204,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from MizuharaSmexyBot.modules.helper_funcs.handlers import (
+from LaylaRobot.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
