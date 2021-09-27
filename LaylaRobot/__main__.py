@@ -74,7 +74,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-K, I'M Hashiko Sanae... 
+Konnichiwa, I'M Hashiko Sanae... 
 `ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ! ʜɪᴛ` /help
 Maintained by Park Ans Percy🖤
 """
@@ -82,7 +82,7 @@ Maintained by Park Ans Percy🖤
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/LaylaRobot?startgroup=true"),
+            text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ", url="t.me/Hashiko_Sanae_Bot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="Mizuhara_"),
@@ -105,7 +105,7 @@ buttons = [
 HELP_STRINGS = """
 `Hi.. I'M` Mizuhara
 `ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`
-Powered by :- [Pain's Bot](t.me/fun_just_group)"""
+Powered by :- [Park](t.me/Boy_Alone_In_Universe)"""
 
 Mizuhara_IMG = "https://telegra.ph/file/a7724cd5a8b4a1a276170.jpg"
 
