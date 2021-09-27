@@ -110,7 +110,7 @@ Powered by :- [Park](t.me/Boy_Alone_In_Universe)"""
 Mizuhara_IMG = "https://telegra.ph/file/a7724cd5a8b4a1a276170.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project [channel](t.me/Hermione_Support) \
+ You can support the project But Not With Money.Just Join Channel [Hermione Support](t.me/Hermione_Support) \
  Supporting isnt always financial! [Aurora](t.me/Aurora_x_Bot) \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -375,7 +375,7 @@ def layla_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="layla_back")
+                    InlineKeyboardButton(text="🔙Back", callback_data="layla_back")
                  ]
                 ]
             ),
@@ -396,13 +396,13 @@ def Source_about_callback(update, context):
     if query.data == "source_":
         query.message.edit_text(
             text=""" Hi..🤗 I'm *Mizuhara*
-                 \nHere is the [Source Code](https://github.com/QueenArzoo/LaylaRobot) .""",
+                 \nHere is the [Source Code🛒](https://github.com/Parkseojoon2005/Hashiko-Sanake) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="source_back")
+                    InlineKeyboardButton(text="🔙Go Back", callback_data="source_back")
                  ]
                 ]
             ),
@@ -431,7 +431,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Help",
+                                text="🚀Help",
                                 url="t.me/{}?start=ghelp_{}".format(
                                     context.bot.username, module
                                 ),
@@ -468,7 +468,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="🔙Back", callback_data="help_back")]]
             ),
         )
 
@@ -541,7 +541,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Back",
+                                text="🔙Back",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -554,7 +554,7 @@ def settings_button(update: Update, context: CallbackContext):
             curr_page = int(prev_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                "Hi there! There are quite a few settings for {} - go ahead and pick what "
+                "Konnichiwa! There are quite a few settings for {} - go ahead and pick what "
                 "you're interested in.".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
@@ -568,7 +568,7 @@ def settings_button(update: Update, context: CallbackContext):
             next_page = int(next_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                "Hi there! There are quite a few settings for {} - go ahead and pick what "
+                "Konnchiwa! There are quite a few settings for {} - go ahead and pick what "
                 "you're interested in.".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
@@ -610,14 +610,14 @@ def get_settings(update: Update, context: CallbackContext):
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
         if is_user_admin(chat, user.id):
-            text = "Click here to get this chat's settings, as well as yours."
+            text = "Click here to get this chat's settings, as well as yours.🚀"
             msg.reply_text(
                 text,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text="Settings",
+                                text="🍁Settings",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
                                 ),
@@ -664,7 +664,7 @@ def donate(update: Update, context: CallbackContext):
             )
         except Unauthorized:
             update.effective_message.reply_text(
-                "Contact me in PM first to get donation information."
+                "Contact me in PM first to get donation information.(No need To Donate)"
             )
 
 
