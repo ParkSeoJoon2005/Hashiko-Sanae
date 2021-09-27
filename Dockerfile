@@ -66,11 +66,11 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements
-RUN git clone https://github.com/AnuragSharma080/MizuharaSmexyBot /root/MizuharaSmexyBot
-WORKDIR /root/MizuharaSmexyBot
+RUN git clone https://github.com/parkseojoon2005/Hashiko-Sanae /root/Hashiko-Sanae
+WORKDIR /root/Hashiko-sanae
 
 # Copy config file
-COPY ./MizuharaSmexyBot/sample_config.py ./MizuharaSmexyBot/config.py* /root/MizuharaSmexyBot/MizuharaSmexyBot/
+COPY ./Hashiko-Sanae/sample_config.py ./Hashiko-Sanae/config.py* /root/MizuharaSmexyBot/MizuharaSmexyBot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -78,4 +78,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","MizuharaSmexyBot"]
+CMD ["python3","-m","Hashiko-Sanae"]
