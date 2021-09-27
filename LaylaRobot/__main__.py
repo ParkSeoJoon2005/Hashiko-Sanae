@@ -87,13 +87,13 @@ buttons = [
     [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="Mizuhara_"),
         InlineKeyboardButton(
-            text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"
+            text="🛠Support", url=f"https://t.me/{SUPPORT_CHAT}"
         ),
     ],
     [
-        InlineKeyboardButton(text="ʟᴏɢꜱ", url=f"https://t.me/fun_just_group"),
+        InlineKeyboardButton(text="ʟᴏɢꜱ", url=f"https://t.me/Hermione_support_Official"),
         InlineKeyboardButton(
-            text="ꜰᴇᴅᴇʀᴀᴛɪᴏɴ", url=f"https://t.me/splits_latest410"
+            text="🛡️Developer", url=f"https://t.me/Boy_Alone_In_Universe"
         ),
     ],
     [
@@ -110,8 +110,8 @@ Powered by :- [Park](t.me/Boy_Alone_In_Universe)"""
 Mizuhara_IMG = "https://telegra.ph/file/a7724cd5a8b4a1a276170.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project [Pain](t.me/splits_latest) \
- Supporting isnt always financial! [Just Fun](t.me/fun_just_group) \
+ You can support the project [channel](t.me/Hermione_Support) \
+ Supporting isnt always financial! [Aurora](t.me/Aurora_x_Bot) \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
 IMPORTED = {}
@@ -197,7 +197,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="🔙Back", callback_data="help_back")]]
                     ),
                 )
 
@@ -222,7 +222,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            "I'm awake already😜!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -311,7 +311,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="🔙Back", callback_data="help_back")]]
                 ),
             )
 
@@ -357,7 +357,7 @@ def layla_about_callback(update, context):
     query = update.callback_query
     if query.data == "layla_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *Mizuhara*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *Hashiko Sanake*, a powerful group management bot built to help you manage your group easily.
                  \n❍ I can restrict users.
                  \n❍ I can greet users with customizable welcome messages and even set a group's rules.
                  \n❍ I have an advanced anti-flood system.
@@ -368,7 +368,7 @@ def layla_about_callback(update, context):
                  \n❍ Series Channel @splits_latest
                  \n❍ Support Group @fun_just_group
                  \n❍ Miku Bot Assistant @Feel_Pain_Eccept_Pain.
-                 \nHere is the [💾Repository](https://github.com/QueenArzoo/LaylaRobot).
+                 \nHere is the [🌍Repository](https://github.com/parkseojoon2005/Hashiko_Sanake).
                  \n\nIf you have any question about Mizuhara, let us know at .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
